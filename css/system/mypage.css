@@ -1,0 +1,555 @@
+@import "contents.css";
+@import "qalist.css";
+@import "calendar/mypage_calendar.css";
+div#side_l {
+    float:left;
+    width:250px;
+    margin-right:10px;
+    line-height:140%;
+}
+
+div#side_r {
+    float:right;
+    width:492px;
+    line-height:140%;
+}
+
+* html .box {
+    padding:10px 10px 0px 10px;
+    }
+
+ul.list li {
+    list-style:none;
+    background-image:url(/img/system/arrow_p.gif);
+    background-repeat:no-repeat;
+    background-position:0 5px;
+    padding-left:10px;
+    margin-bottom:10px;
+    }
+
+ul.list li.none {
+    background-image:none;
+    margin-bottom:0px;
+    }
+
+ul.list li.last {
+    margin-bottom:0px;
+    }
+
+ul.infomation li {
+    list-style:none;
+    background-image:url(/img/system/icon.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:18px;
+    margin-bottom:10px;
+    }
+
+ul.infomation li.last {
+    margin-bottom:0px;
+    }
+
+.box p.remarks{
+    margin-bottom:5px;
+    font-size:12px;
+    color:#EE55AA;
+}
+
+.box .sub_title{
+    font-size:12px;
+    color:#EE55AA;
+}
+
+/*left*/
+h3.base_info {
+    background-image:url(/img/mypage/base_info_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:11px 0 0 33px;
+    text-align:left;
+    height:25px;
+    }
+
+h3.similar {
+    background-image:url(/img/mypage/similar_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:11px 0 0 33px;
+    text-align:left;
+    height:25px;
+    }
+
+div.left_box{
+    width:250px;
+}
+
+/*right*/
+h3.message {
+    background-image:url(/img/mypage/message_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:11px 0 0 33px;
+    text-align:left;
+    height:25px;
+    }
+h3.seminar {
+    background-image:url(/img/mypage/seminar_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:11px 0 0 33px;
+    text-align:left;
+    height:25px;
+    }
+    
+h3.point {
+    background-image:url(/img/mypage/point_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:11px 0 0 33px;
+    text-align:left;
+    height:25px;
+    }
+h3.question {
+    background-image:url(/img/mypage/question_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:11px 0 0 33px;
+    text-align:left;
+    height:25px;
+    }
+
+h3.bulletin {
+    background-image:url(/img/mypage/bulletin_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:11px 0 0 33px;
+    text-align:left;
+    height:25px;
+    }
+
+div.right_box{
+    width:492px;
+}
+
+.table_s {
+    width:220px;
+    text-align:left;
+    }
+    
+.table_s th {
+    text-align:left;
+    font-weight:normal;
+    border-bottom:1px solid #EFEFEF;
+    height:20px;
+    }
+    
+.table_s th.member {
+    width:70px;
+}
+
+.table_s td {
+    height:20px;
+    }
+    
+.table_s td.title {
+    background-image:url(/img/common/arrow_p.gif);
+    background-repeat:no-repeat;
+    background-position:0 5px;
+    padding-left:10px;
+    }
+
+.table_s td.question {
+    background-image:url(/img/question/question.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+
+.table_s td.question_finish {
+    background-image:url(/img/question/question_finish.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+
+.table_s td.bulletin {
+    background-image:url(/img/bulletin/bulletin.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+.table_s td.bulletin_teacher {
+    background-image:url(/img/bulletin/bulletin_teacher.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+.table_s td.member {
+    /*font-size:11px;*/
+    width:70px;
+}
+
+.table_l {
+    width:462px;
+    text-align:left;
+    }
+    
+.table_l th {
+    text-align:left;
+    font-weight:normal;
+    border-bottom:1px solid #EFEFEF;
+    height:20px;
+    }
+
+.table_l th.date {
+    width:100;
+}
+
+.table_l th.answer {
+    width:60px;
+}
+
+.table_l td {
+    height:20px;
+    }
+
+.table_l td.title {
+    background-image:url(/img/common/arrow_p.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:10px;
+    }
+
+.table_l td.question {
+    background-image:url(/img/question/question.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+
+.table_l td.question_finish {
+    background-image:url(/img/question/question_finish.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+
+.table_l td.bulletin {
+    background-image:url(/img/bulletin/bulletin.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+.table_l td.bulletin_teacher {
+    background-image:url(/img/bulletin/bulletin_teacher.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+.table_l td.bulletin_delivery {
+    background-image:url(/img/bulletin/bulletin_delivery.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+.table_l td.comment {
+    background-image:url(/img/bulletin/comment_edit.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding-left:20px;
+    }
+
+.table_l td.date {
+    width:85px;
+}
+
+.table_l td.answer {
+    background-image:url(/img/common/letter_on.gif);
+    background-repeat:no-repeat;
+    background-position:0px 0;
+    width:60px;
+    text-align:right;
+    }
+    
+.table_l td.answer_no {
+    background-image:url(/img/common/letter_off.gif);
+    background-repeat:no-repeat;
+    background-position:0px 0;
+    width:60px;
+    text-align:right;
+    }
+
+
+table#h3_member {
+    background-image:url(/img/mypage/t_member.jpg);
+    background-repeat:no-repeat;
+    margin-bottom:10px;
+    width:762px;
+    height:41px;
+    text-align:left;
+    }
+
+table#h3_member .title_txt {
+    color:#EE55AA;
+    font-size:14px;
+    font-weight:bold;
+    padding:2px 0 0 20px;
+    }
+    
+table#h3_member .henkou {
+    text-align:right;
+    margin-right:30px;
+    }
+
+div#infomation {
+    width:730px;
+    margin-bottom:10px;
+    margin-left:15px;
+    }
+
+div#infomation li {
+    background-image:url(/img/system/icon.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    list-style:none;
+    padding-left:18px;
+    margin-bottom:10px;
+    }
+
+.all {
+    clear:both;
+    text-align:right;
+    margin:5px 20px 0px 0px;
+    }
+
+table#item_box{
+    width:300px;
+    float:left;
+}
+
+table#item_box th{
+    text-align:left;
+    font-weight:normal;
+    color:#EE55AA;
+    background-image:url(/img/system/icon.gif);
+    background-repeat:no-repeat;
+    background-position:0 2px;
+    padding:0px 2px 2px 18px;
+}
+
+table#item_box td.use_point{
+    width:100%;
+}
+
+table#item_box span.point{
+    font-size:14px;
+    color:#EE55AA;
+}
+
+div#point_box{
+    width:157px;
+    height:77;
+    float:right;
+    margin:0px 0px 0px 0px;
+    position:relative;
+    }
+
+div#point_box .number1{
+    position:absolute;
+    top:44px;
+    left:55px;
+    color:#EE55AA;
+    font-size:25px;
+    }
+
+div#point_box .number2{
+    position:absolute;
+    top:44px;
+    left:42px;
+    color:#EE55AA;
+    font-size:25px;
+    }
+
+#delivery_box{
+    line-height:18px;
+    margin-bottom:20px;
+}
+
+#delivery_box span.title{
+    font-size:13px;
+}
+
+#delivery_box .txtbox-q1-top{
+    padding:0;
+    margin:0px 18px 0px 0px;
+    height:9px;
+    background: url(/img/mypage/txtbox_q_top1.gif) no-repeat 100% 0%;
+    font-size:1px; line-height:1px; overflow:hidden; text-indent:-9999px;
+}
+#delivery_box .txtbox-q1-body{
+    padding:0;
+    margin:0px 0px 0px 0px;
+    background: url(/img/mypage/txtbox_q_body1.gif) no-repeat 0% 100%;
+}
+
+#delivery_box .txtbox-q2-body{
+    padding:0;
+    margin:0px 14px 0px 0px;
+    background: url(/img/mypage/txtbox_q_body2.gif) no-repeat 0% 100%;
+}
+
+#delivery_box .txtbox-q3-body{
+    padding:0;
+    margin:0px 14px 0px 0px;
+    background: url(/img/mypage/txtbox_q_body3.gif) no-repeat 0% 100%;
+}
+
+#delivery_box .bulletin{
+    padding:0px 0px 0px 115px;
+    height:58px;
+    width:326px;
+    vertical-align: middle;
+    font-size:12px;
+}
+
+/*セミナー*/
+div#Calendar{
+    float:left;
+    margin-right:5px;
+}
+
+.seminar_list{
+    width:462px;
+    float:left;
+    margin:0px 0px 0px 0px;
+}
+
+.seminar_list dd.index_line{
+    text-align:left;
+    height:24px;
+    line-height:24px;
+    font-size:12px;
+    color:#EE55AA;
+    padding:2px 0px;
+    background-image:url(/img/bulletin/bg_search.gif);
+    background-repeat:repeat-x;
+    background-position:left bottom;
+    clear:both;
+    
+}
+
+.seminar_list dd.last{
+    text-align:left;
+    height:24px;
+    line-height:24px;
+    font-size:12px;
+    color:#666666;
+    padding:2px 0px;
+    clear:both;
+}
+
+.seminar_list dd.line{
+    text-align:left;
+    height:24px;
+    line-height:24px;
+    font-size:12px;
+    color:#666666;
+    padding:2px 0px;
+    clear:both;
+    background-image:url(/img/bulletin/bg_list.gif);
+    background-repeat:repeat-x;
+    background-position:left bottom;
+}
+
+.seminar_list dd.title_name{
+    background-image:url(/img/school/seminar.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    float:left;
+    width:190px;
+    padding-left:20px;
+}
+
+.seminar_list dd.school_name{
+    background-image:url(/img/school/school.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    float:left;
+    /*width:118px;*/
+    padding-left:20px;
+}
+
+.seminar_list dd.date_name{
+    background-image:url(/img/school/date.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    float:left;
+    width:92px;
+    padding-left:20px;
+}
+
+.seminar_list dd.seminar{
+    background-image:url(/img/common/arrow_p.gif);
+    background-repeat:no-repeat;
+    background-position:left 7px;
+    float:left;
+    width:200px;
+    /*width:338px;*/
+    padding-left:10px;
+}
+
+.seminar_list dd.school{
+    float:left;
+    /*width:138px;*/
+}
+
+.seminar_list dd.date{
+    width:112px;
+    float:left;
+}
+
+/*各ジャンルタイトル*/
+h4.ttl_genre1{
+    background-image:url(/img/index/ttl_genre1.gif);
+    height:24px;
+    width:460px;
+    font-size:1px;
+    line-height:1px;
+    overflow:hidden;
+    text-indent:-9999px;
+    margin:0px 0px 0px 5px;
+    padding:0px;
+}
+
+h4.ttl_genre2{
+    background-image:url(/img/index/ttl_genre2.gif);
+    height:24px;
+    width:460px;
+    font-size:1px;
+    line-height:1px;
+    overflow:hidden;
+    text-indent:-9999px;
+    margin:0px 0px 0px 5px;
+    padding:0px;
+}

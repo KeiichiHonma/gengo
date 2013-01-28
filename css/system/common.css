@@ -1,0 +1,186 @@
+div#search {
+    background-image:url(/img/common/search_bg.jpg);
+    width: 845px;
+    height:30px;
+    text-align:left;
+    font-size:12px;
+    margin:0px auto 0px auto;
+    padding:0px 0px 0px 0px;
+    line-height:30px;
+    }
+div#search img{
+    float:left;
+}
+
+* html div#search input.keyword{
+    vertical-align:-0.4em;
+}
+
+* html div#search input.go{
+    vertical-align:-0.4em;
+}
+
+div#search input.radio{
+    vertical-align:-0.1em;
+}
+
+div#search .block{
+    width:550px;
+    margin:0px auto 0px auto;
+}
+
+ul.help li {
+    list-style:none;
+    background-image:url(/img/common/arrow_p.gif);
+    background-repeat:no-repeat;
+    background-position:0 5px;
+    padding-left:10px;
+    margin-bottom:10px;
+    }
+
+ul.help li.last {
+    margin-bottom:0px;
+    }
+.attention {
+    color:#EE55AA;
+    }
+.pink {
+    color:#EE55AA;
+    }
+
+/*セミナー*/
+div#main div.seminar_title {
+    background-image:url(/img/common/t_border_l.gif);
+    background-repeat:repeat-y;
+    margin:30px 0px 6px 0px;
+    }
+
+div#main div.seminar_title h2{
+    background-image:url(/img/common/seminar_title.jpg);
+    background-repeat:no-repeat;
+    font-size:1px;
+    line-height:1px;
+    overflow:hidden;
+    text-indent:-9999px;
+    width:630px;
+    height:50px;
+}
+
+.seminar_list_l{
+    width:620px;
+    float:left;
+    margin:0px 0px 0px 5px;
+}
+.seminar_list_l dd.index_line{
+    text-align:left;
+    height:24px;
+    line-height:24px;
+    font-size:12px;
+    color:#EE55AA;
+    padding:2px 0px;
+    background-image:url(/img/bulletin/bg_search.gif);
+    background-repeat:repeat-x;
+    background-position:left bottom;
+    clear:both;
+    
+}
+
+.seminar_list_l dd.last{
+    text-align:left;
+    height:24px;
+    line-height:24px;
+    font-size:12px;
+    color:#666666;
+    padding:2px 0px;
+    clear:both;
+}
+
+.seminar_list_l dd.line{
+    text-align:left;
+    height:24px;
+    line-height:24px;
+    font-size:12px;
+    color:#666666;
+    padding:2px 0px;
+    clear:both;
+    background-image:url(/img/bulletin/bg_list.gif);
+    background-repeat:repeat-x;
+    background-position:left bottom;
+}
+
+.seminar_list_l dd.title_name{
+    background-image:url(/img/school/seminar.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    float:left;
+    width:280px;
+    padding-left:20px;
+}
+
+.seminar_list_l dd.school_name{
+    background-image:url(/img/school/school.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    float:left;
+    /*width:118px;*/
+    padding-left:20px;
+}
+
+.seminar_list_l dd.date_name{
+    background-image:url(/img/school/date.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    float:left;
+    width:92px;
+    padding-left:20px;
+}
+
+.seminar_list_l dd.seminar{
+    background-image:url(/img/common/arrow_p.gif);
+    background-repeat:no-repeat;
+    background-position:left 7px;
+    float:left;
+    width:290px;
+    /*width:338px;*/
+    padding-left:10px;
+}
+
+.seminar_list_l dd.school{
+    float:left;
+    /*width:138px;*/
+}
+
+.seminar_list_l dd.date{
+    width:112px;
+    float:left;
+}
+
+/*各ジャンルタイトル*/
+h3.ttl_genre1_l{
+    background-image:url(/img/common/ttl_genre1_l.gif);
+    height:24px;
+    width:620px;
+    font-size:1px;
+    line-height:1px;
+    overflow:hidden;
+    text-indent:-9999px;
+    margin:0px 0px 0px 5px;
+    padding:0px;
+}
+
+h3.ttl_genre2_l{
+    background-image:url(/img/common/ttl_genre2_l.gif);
+    height:24px;
+    width:620px;
+    font-size:1px;
+    line-height:1px;
+    overflow:hidden;
+    text-indent:-9999px;
+    margin:0px 0px 0px 5px;
+    padding:0px;
+}
+.all {
+    clear:both;
+    text-align:right;
+    margin:5px 20px 0px 0;
+    }

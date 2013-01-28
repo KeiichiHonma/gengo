@@ -1,0 +1,62 @@
+.sem02 {
+width:683px;
+margin:0 auto;
+margin-bottom:0px;
+}
+.sem02 h4 {
+margin-bottom:8px;
+}
+.img-l {
+float:left;
+margin-right:10px;
+width:270px;
+}
+.text {
+float:right;
+width:392px;
+}
+.sem02 h6 {
+margin-left:8px;
+margin-bottom:0px;
+font-weight:bold;
+background:url(/img/sem/ico_s.gif) 0 0 no-repeat;
+padding-left:15px;
+}
+.sem02 p {
+line-height:1.4;
+padding:0 5px;
+}
+
+ul.service-list li {
+background:url(/img/sem/bt_double_bg.jpg) 0 0 no-repeat;
+width:180px;
+float:left;
+margin:0 5px 0px 5px;
+font-size:131%;
+font-weight:bold;
+color:#ffffff;
+text-align:center;
+line-height:1.1;
+height:55px;
+padding:8px 15px 0 15px;
+}
+.sem05 {
+width:690px;
+margin:0 auto;
+}
+.sem05 h4 {
+margin-bottom:5px;
+}
+.sem05 p {
+padding:0 5px 5px 5px;
+}
+.sem05-01 {
+width:330px;
+margin:15px 0;
+float:left;
+}
+.sem05-02 {
+width:327px;
+margin:15px 0;
+float:right;
+}

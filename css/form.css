@@ -1,0 +1,145 @@
+div#form_btn{
+    margin:10px 0px;
+    text-align:center;
+}
+.form_font{
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.m_b10 {
+    margin-bottom:10px;
+    }
+.error_alert{
+    font-weight:bold;
+    color:#FF0000;
+}
+table.gray{
+    margin-top:5px;
+    width:730px;
+    background-color: #CCCCCC;
+    border-collapse:separate;
+    border-spacing:1px;
+}
+
+table.gray td{
+    color: #333333;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+    padding:5px;
+}
+
+table.gray td.confirm{
+    padding:2px;
+}
+
+table.gray td.form_ttl{
+    width:200px;
+    background-color: #F5F5F4;
+    border-top:1px solid #FFFFFF;
+    border-left:1px solid #FFFFFF;
+}
+
+table.gray td.confirm_ttl{
+    padding:0px;
+    width:150px;
+    background-color: #F5F5F4;
+    border-top:1px solid #FFFFFF;
+    border-left:1px solid #FFFFFF;
+    vertical-align:middle;
+}
+
+table.gray td.form_data{
+    background-color: #FFFFFF;
+    vertical-align:middle;
+}
+
+table.gray td.confirm_data{
+    padding:0px;
+    background-color: #FFFFFF;
+    vertical-align:middle;
+}
+
+table.gray td.common_ttl{
+    font-size:12px;
+    width:150px;
+    background-color: #F5F5F4;
+    border-top:1px solid #FFFFFF;
+    border-left:1px solid #FFFFFF;
+}
+
+table.gray td.common_data{
+    font-size:12px;
+    background-color: #FFFFFF;
+}
+
+table.gray p.example{
+    font-size:11px;
+    padding:3px 0px 0px 0px;
+}
+
+.attention{
+    color: #FF0000;
+    font-weight:bold;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_text_common{
+    width:280px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_text_large{
+    width:450px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_textarea_little{
+    width:500px;
+    height:100px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_textarea_little_height{
+    width:500px;
+    height:50px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_textarea_common{
+    width:370px;
+    height:150px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_text_postcode1{
+    width:30px;
+    margin:0px 4px 0px 0px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+.form_text_postcode2{
+    width:50px;
+    margin:0px 0px 0px 4px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+.form_text_number{
+    width:50px;
+    margin:0px 4px 0px 4px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+p.form_attention{
+    /*border:1px solid red;*/
+    border:1px solid #FACDE6;
+    color:red;
+    /*font-weight:bold;*/
+    font-size:12px;
+    padding:5px;
+    line-height:20px;
+}

@@ -1,0 +1,57 @@
+ul#exclamation{
+    padding:8px 10px 10px 15px;
+    margin-bottom:1px;
+}
+
+ul#exclamation li{
+    height:60px;
+    /*line-height:35px;*/
+    background:url(/img/microblog/exclamation_indent.jpg) 0 0px no-repeat;
+    font-size:20px;
+    padding-left:40px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+ul#exclamation li span{
+    font-weight:normal;
+    font-size:13px;
+    line-height:16px;
+}
+
+ul#point{
+    padding:8px 10px 10px 15px;
+    margin-bottom:1px;
+}
+
+ul#point li{
+    height:60px;
+    /*line-height:35px;*/
+    background:url(/img/microblog/point_indent.jpg) 0 0px no-repeat;
+    font-size:20px;
+    padding-left:40px;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+ul#point li span{
+    font-weight:normal;
+    font-size:13px;
+    line-height:16px;
+}
+
+ul#microblog_check{
+    padding:8px 10px 10px 15px;
+    margin-bottom:1px;
+}
+
+ul#microblog_check li{
+    height:31px;
+    line-height:31px;
+    background:url(/img/microblog/check_indent.jpg) 0 0px no-repeat;
+    font-size:120%;
+    padding-left:30px;
+    margin-bottom:5px;
+    font-weight:bold;
+    color:#0B3D62;
+}

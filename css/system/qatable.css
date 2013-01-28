@@ -1,0 +1,124 @@
+#qatable {
+    width:550px;
+    text-align:left;
+    margin-bottom:10px;
+    }
+    
+#qatable th {
+    border-bottom:1px solid #EFEFEF;
+    height:20px;
+    }
+
+#qatable th.date {
+    width:100px;
+}
+
+#qatable th.member {
+    width:100px;
+}
+
+#qatable th.answer {
+    width:60px;
+}
+
+#qatable td {
+    height:20px;
+    }
+    
+#qatable td.title {
+    background-image:url(/img/common/arrow_p.gif);
+    background-repeat:no-repeat;
+    background-position:0 5px;
+    padding-left:10px;
+    width:280px;
+    }
+
+#qatable td.date {
+    font-size:12px;
+    width:100px;
+}
+
+#qatable td.member {
+    font-size:12px;
+    width:100px;
+}
+
+#qatable td.answer {
+    background-image:url(/img/common/letter_on.gif);
+    background-repeat:no-repeat;
+    background-position:0px 0;
+    width:60px;
+    text-align:right;
+    padding-right:10px;
+    }
+    
+#qatable td.answer_no {
+    background-image:url(/img/common/letter_off.gif);
+    background-repeat:no-repeat;
+    background-position:0px 0;
+    width:60px;
+    text-align:right;
+    padding-right:10px;
+    }
+    
+#qatable_l {
+    width:760px;
+    text-align:left;
+    margin-bottom:10px;
+    }
+    
+#qatable_l th {
+    border-bottom:1px solid #EFEFEF;
+    height:20px;
+    text-align:left;
+    }
+    
+#qatable_l td {
+    height:20px;
+    }
+
+#qatable_l td.b {
+    font-weight:bold;
+    }
+
+#qatable_l .title {
+    background-image:url(/img/system/arrow_p.gif);
+    background-repeat:no-repeat;
+    background-position:0 5px;
+    padding-left:10px;
+    }
+#qatable_l .date {
+    font-size:11px;
+}
+#qatable_l .q_title {
+    background-image:url(/img/system/q20.gif);
+    background-repeat:no-repeat;
+    background-position:0px;
+    padding-left:25px;
+    }
+
+#qatable_l .q_u_title {
+    background-image:url(/img/system/q20_u.gif);
+    background-repeat:no-repeat;
+    background-position:0px;
+    padding-left:25px;
+    }
+
+#qatable_l .q_t_title {
+    background-image:url(/img/system/t20.gif);
+    background-repeat:no-repeat;
+    background-position:0px;
+    padding-left:25px;
+    }
+
+#qatable_l .answer {
+    background-image:url(/img/common/letter_on.gif);
+    background-repeat:no-repeat;
+    background-position:0px 0;
+    }
+    
+#qatable_l .answer_no {
+    background-image:url(/img/common/letter_off.gif);
+    background-repeat:no-repeat;
+    background-position:0px 0;
+    }

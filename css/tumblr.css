@@ -1,0 +1,964 @@
+@charset "UTF-8";
+
+    /* Minimal Theme designed by Artur Kim (http://arturkim.com) for Tumblr | version 1.5 */
+
+    /* RESET */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, font, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td {
+        margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;
+    }
+    body { line-height: 1; }
+    ol, ul { list-style: none; }
+    blockquote, q { quotes: none; }
+    blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+    :focus { outline: 0; }
+    del { text-decoration: line-through; }
+    table { border-collapse: collapse; border-spacing: 0; }
+
+    /* GLOBAL ELEMENTS */
+    body { background: #fff; }
+    body, input, textarea { color: #000; font: 14px/20px "helvetica neue",helvetica,arial,sans-serif; }
+    p, ul, ol, dd, pre { margin-bottom: 20px; }
+    pre, code { font: 12px Monaco,monospace; line-height: 20px; }
+    blockquote { border-left: 5px solid #ddd; color: #555; font-style: italic; margin-bottom: 20px; padding-left: 10px; }
+    /*table { border: 1px solid #ccc; border-width: 1px 1px 0 1px; font-size: 14px; line-height: 20px; margin: 0 0 22px 0; text-align: left; }*/
+    caption { text-align: left; }
+    /*tr { border-bottom: 1px solid #ccc; }*/
+    /*th, td { padding: .7em 1.25em; }*/
+    hr { background-color: #ccc; border: 0; color: #555; height: 1px; margin-bottom: 20px; }
+    a:link, a:visited { color: #2275b3;text-decoration: none; }
+    a:focus, a:hover, a:active { color: #0099ff; }
+    h1, h2, h3, h4, h5, h6 {  font-weight:normal; clear:both; }
+
+    /* DEFAULT CSS */
+    
+    /* DEFAULT CSS */
+    #header .menu {
+        border-bottom: 1px solid #ccc;
+        margin: 0 auto 3px;
+        overflow: hidden;
+        padding: 20px 0 10px;
+        width: 900px;
+    }
+        #header #pages {
+            float: left;
+            width: 580px;
+        }
+            #header #pages ul {
+                float: left;
+                margin-bottom: 0;
+            }
+                #header #pages li {
+                    float: left;
+                    margin-right: 10px;
+                    padding: 4px 10px 3px 0;
+                }
+                    #header #pages a, #header #pages a:visited {
+                        color: #555;
+                        font-size: 16px;
+                        text-decoration: none;
+                    }
+                    #header #pages a:focus, #header #pages a:hover, #header #pages a:active {
+                        color: #dd3333;
+                    }
+        #header #search {
+            float: right;
+        }
+            #header #search input {
+                border: 1px solid #ccc;
+                line-height: 20px;
+                padding: 4px;
+            }
+            #header #search input.search-button {
+                background: #eee;
+                color: #555;
+                padding: 3px;
+                width: 60px;
+            }
+    #header #branding {
+        border-bottom: 1px solid #ccc;
+        margin: 0 auto 0px;
+        width: 900px;
+    }
+        #header h1 {
+            color:#FFFFFF;
+            font-size: 10px;
+            position:absolute;
+            top: 5px;
+            left:50%;
+            margin-left:-300px;
+        }
+        #header h1 a {
+            color: #111;
+            font: 80px Georgia,serif;
+            font-weight: normal;
+            line-height: 100px;
+            text-decoration: none;
+        }
+        #header h1 a:focus, #header h1 a:hover, #header h1 a:active {
+            color: #dd3333;
+        }
+        #header img {
+            max-width: 900px;
+        }
+    #main {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        clear: both;
+        margin: 0 auto 3px;
+        overflow: hidden;
+        width: 900px;
+    }
+        #container {
+            border-right: 1px solid #ccc;
+            float: left;
+            min-height: 400px;
+            width: 580px;
+        }
+            .post-meta {
+                border-bottom: 1px solid #ccc;
+                color: #555;
+                overflow: hidden;
+                padding: 9px 0;
+            }
+                .post-meta .type {
+                    float: left;
+                }
+                    .post-meta .type a {
+                        border-bottom: 1px solid #ccc;
+                        font-weight: bold;
+                        padding: 0 10px 10px;
+                        text-decoration: none;
+                    }
+                    .post-type-text .post-meta .type a {
+                        border-bottom: 1px solid {color:Post Type Text};
+                        color: {color:Post Type Text};
+                    }
+                    .post-type-photo .post-meta .type a {
+                        border-bottom: 1px solid {color:Post Type Photo};
+                        color: {color:Post Type Photo};
+                    }
+                    .post-type-photoset .post-meta .type a {
+                        border-bottom: 1px solid {color:Post Type Photoset};
+                        color: {color:Post Type Photoset};
+                    }
+                    .post-type-quote .post-meta .type a {
+                        border-bottom: 1px solid {color:Post Type Quote};
+                        color: {color:Post Type Quote};
+                    }
+                    .post-type-link .post-meta .type a {
+                        border-bottom: 1px solid {color:Post Type Link};
+                        color: {color:Post Type Link};
+                    }
+                    .post-type-chat .post-meta .type a {
+                        border-bottom: 1px solid {color:Post Type Chat};
+                        color: {color:Post Type Chat};
+                    }
+                    .post-type-video .post-meta .type a {
+                        border-bottom: 1px solid {color:Post Type Video};
+                        color: {color:Post Type Video};
+                    }
+                    .post-type-audio .post-meta .type a {
+                        border-bottom: 1px solid {color:Post Type Audio};
+                        color: {color:Post Type Audio};
+                    }
+                    .post-meta .type a:focus, .post-meta .type a:hover, .post-meta .type a:active {
+                        margin-left: 5px;
+                    }
+                .post-meta .date, .post-meta .comments, .post-meta .note-count {
+                    float: left;
+                    padding: 0 10px;
+                }
+            .post-content {
+                padding: 5px 10px 5px;
+            }
+            .post-content div:last-child, .post-content div:last-child p,
+            .post-content div:last-child ul, .post-content div:last-child ol,
+            .post-content div:last-child blockquote {
+                margin-bottom: 0;
+            }
+            
+                .post-content h2 {
+                    font-size: 20px;
+                    font-family:"メイリオ","ヒラギノ","ＭＳ Ｐゴシック","Osaka",Arial,sans-serif;
+                    margin-bottom: 20px;
+                }
+
+                .post-content img {
+                    margin-bottom: 20px;
+                    padding: 1px;
+                }
+                .post-type-text .post-content ul {
+                    padding-left: 30px;
+                }
+                    .post-type-text .post-content ul ul {
+                        margin-bottom: 0;
+                    }
+                    .post-type-text .post-content ul li {
+                        list-style-type: disc;
+                    }
+                        .post-type-text .post-content ul ul li {
+                            list-style-type: circle;
+                        }
+                .post-type-text .post-content ol {
+                    padding-left: 30px;
+                }
+                    .post-type-text .post-content ol ol {
+                        margin-bottom: 0;
+                    }
+                    .post-type-text .post-content ol li {
+                        list-style-type: upper-latin;
+                    }
+                        .post-type-text .post-content ol ol li {
+                            list-style-type: lower-latin;
+                        }
+                .post-type-photoset .post-content .html_photoset {
+                    background: #eee;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                }
+                .post-type-link .post-content .link-wrap {
+                    margin-bottom: 20px;
+                }
+                .post-type-chat .post-content .label {
+                    color: #333;
+                    font-weight: bold;
+                }
+                .post-type-video .post-content .video-wrap {
+                    background: #f0f0f0;
+                    margin-bottom: 20px;
+                    padding: 10px;
+                }
+                .post-type-audio .post-content .caption {
+                    margin-top: 10px;
+                }
+                .tags {
+                    font-size: 13px;
+                }
+                .tags a {
+                    text-decoration: none;
+                }
+                .tags a:after {
+                    content: ",";
+                }
+                .tags a:last-child:after {
+                    content: "";
+                }
+            #disqus_thread {
+                border-top: 1px solid #ccc;
+                padding: 10px 30px 0;
+            }
+                #disqus_thread h3 {
+                    color: #111;
+                    font: 18px Georgia,serif;
+                    margin: 20px 0 10px;
+                }
+                #dsq-content .dsq-subscribe-menu {
+                    font-size: 12px;
+                }
+            #post-notes {
+                border-top: 1px solid #ccc;
+                padding: 30px;
+            }
+                #post-notes ol li {
+                    border-bottom: 1px dotted #ccc;
+                    padding: 10px 0;
+                }
+                    #post-notes ol li img {
+                        background: none;
+                        padding-right: 3px;
+                        vertical-align: middle;
+                    }
+            .pagination {
+                border-top: 1px solid #ccc;
+                overflow: hidden;
+                padding: 20px 0;
+            }
+                .pagination .previous-page {
+                    float: left;
+                }
+                .pagination .next-page {
+                    float: right;
+                    margin-right: 30px;
+                }
+                    .pagination a {
+                        font: 20px Georgia,serif;
+                        text-decoration: none;
+                    }
+        #sidebar {
+            float: left;
+            padding-bottom: 30px;
+            width: 319px;
+        }
+            #sidebar h3 {
+                border-bottom: 1px dotted #ccc;
+                color: #999;
+                font-size: 14px;
+                font-weight: bold;
+                margin: 0 0 5px;
+                padding: 9px 20px;
+                text-transform: uppercase;
+            }
+                #sidebar h3 a, #sidebar h3 a:visited {
+                    color: #999;
+                    text-decoration: none;
+                }
+                #sidebar h3 a:focus, #sidebar h3 a:hover, #sidebar h3 a:active {
+                    color: #dd3333;
+                }
+
+            #sidebar ul {
+                margin-bottom: 0;
+            }
+            .widget {
+                border-bottom: 1px solid #ccc;
+                color: #333;
+                font-size: 13px;
+                padding: 0 20px 20px 20px;
+            }
+                .widget h3 {
+                    font: 20px Georgia,serif;
+                    margin-bottom: 20px;
+                }
+                    .widget h3 a, .widget h3 a:visited {
+                        color: #000;
+                        text-decoration: none;
+                    }
+                    .widget h3 a:focus, .widget h3 a:hover, .widget h3 a:active {
+                        color: #dd3333;
+                    }
+                .widget img {
+                    padding: 5px;
+                    max-width: 250px;
+                }
+                .widget p:last-child, .widget ul:last-child, .widget ol:last-child, .widget blockquote:last-child {
+                    margin-bottom: 0;
+                }
+            #about {
+                overflow: hidden;
+            }
+                #about img {
+                    background: #fff;
+                    border: 1px solid #ccc;
+                    float: left;
+                    margin: 0 10px 0 0;
+                    padding: 3px;
+                }
+            .like_post {
+                border-bottom: 1px dotted #ccc;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+            }
+            .like_post:last-child {
+                border: none;
+                margin: 0;
+                padding: 0;
+            }
+                .like_post ul {
+                    padding-left: 20px;
+                }
+                    .like_post ul ul {
+                        margin-bottom: 0;
+                    }
+                    .like_post ul li {
+                        list-style-type: disc;
+                    }
+                        .like_post ul ul li {
+                            list-style-type: circle;
+                        }
+                .like_post ol {
+                    padding-left: 20px;
+                }
+                    .like_post ol ol {
+                        margin-bottom: 0;
+                    }
+                    .like_post ol li {
+                        list-style-type: upper-latin;
+                    }
+                        .like_post ol ol li {
+                            list-style-type: lower-latin;
+                        }
+                .like_post p:last-child, .like_post ul:last-child, .like_post ol:last-child, .like_post blockquote:last-child {
+                    margin-bottom: 0;
+                }
+            #tweets {
+                margin-bottom: 10px;
+            }
+                #tweets .content {
+                    margin-bottom: 10px;
+                }
+                    #tweets a {
+                        text-decoration: none;
+                    }
+            #following_container {
+                overflow: hidden;
+                padding-bottom: 20px;
+            }
+                #following_container li {
+                    display: inline;
+                    padding: 0;
+                    margin: 0;
+                }
+        #colophon {
+            color: #555;
+            float: right;
+            font-size: 12px;
+            padding: 10px 0 20px;
+        }
+
+
+/* =====================================================
+    フッター
+===================================================== */
+#footer {
+padding-bottom:40px;
+background:#153656;
+}
+#footer-inner {
+width:900px;
+margin:5px auto 0 auto;
+}
+
+#f-navi {
+border-bottom:1px solid #0D2033;
+padding:6px 5px;
+margin-bottom:10px;
+}
+#f-navi ul li {
+float:left;
+margin-right:12px;
+font-size:85%;
+background:url(http://www.china-adviser.com/img/common/ico_navy.gif) 0 2px no-repeat;
+padding-left:14px;
+}
+#f-navi ul li a:link,
+#f-navi ul li a:visited {
+color:#ffffff;
+text-decoration:none;
+}
+#f-navi ul li a:hover {
+color:#0099FF;
+text-decoration:none;
+}
+
+#footer-group {
+    margin-top:0px;
+    font-size:11px;
+    text-align:left;
+    color:#5B7691;
+}
+
+#footer-group a:link,
+#footer-group a:visited {
+color:#ffffff;
+text-decoration:none;
+}
+#footer-group a:hover {
+color:#0099FF;
+text-decoration:none;
+}
+
+#footer-bottom {
+    margin:0px -5px 0 0;
+}
+#copyright {
+float:left;
+width:270px;
+}
+#f-banner {
+float:right;
+width:445px;
+}
+#f-banner img {
+margin-right:5px;
+}
+
+body {
+    border-top: 3px solid #143757;
+    font-size:12px;
+    font-family:"メイリオ","ヒラギノ","ＭＳ Ｐゴシック","Osaka",Arial,sans-serif;
+    line-height:1.5;
+    backround-size:73.5px 62px;
+    background:url(http://www.china-adviser.com/img/tumblr/bg.png) repeat;
+    color:#333;
+}
+#global{
+    background:url(http://www.china-adviser.com/img/tumblr/bg_global.gif) no-repeat 0% 0%;
+    margin:0px auto 0;
+    padding:0 0 0px;
+    overflow:hidden;
+    width:900px;
+}
+#global ul li.first{
+    margin-left:5px;
+}
+
+#global ul li{
+    margin:0 0 0 10px;
+    float:left;
+    width:170px;
+}
+
+#global a img,#entry-all a img{
+    filter: alpha(opacity=100);
+    -moz-opacity:1;
+    -khtml-opacity: 1;
+    opacity: 1;
+}
+
+/* ソーシャルアイコン */
+#header_icon{
+    list-style-type: none;
+    position: absolute;
+    top: 5px;
+    right:50%;
+    margin-right:330px;
+}
+
+#header_icon li{
+    float:left;
+    margin-left: 5px;
+}
+
+#footer_icon{
+    list-style-type: none;
+    position: relative;
+    top: 10px;
+    left:10px;
+}
+
+#footer_icon li{
+    float:left;
+    margin-left: 5px;
+}
+
+/* =====================================================
+    Clearfix
+===================================================== */
+.clearfix:after {
+    content: " "; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+    min-height: 1%;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+/* End hide from IE-Mac */
+
+#article_head
+{
+  width: 560px;
+  background-color: transparent;
+  background-image: url("http://www.china-adviser.com/img/tumblr/article_head.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  padding-top: 1px;
+  margin-top: 16px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  clear: both;
+}
+
+#article_main
+{
+  background-color: transparent;
+  background-image: url("http://www.china-adviser.com/img/tumblr/article_main.png");
+  background-repeat: repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  margin-top: 5px;
+}
+
+#article_foot
+{
+  background-color: transparent;
+  background-image: url("http://www.china-adviser.com/img/tumblr/article_foot.png");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 0% 0%;
+  background-clip: border-box;
+  background-origin: padding-box;
+  background-size: auto auto;
+  clear: both;
+  height: 10px;
+}
+.balloon {
+    background:url(http://www.china-adviser.com/img/tumblr/baloon.jpg) no-repeat;
+    height:157px;
+    }
+    .balloon h4 {
+        font-size:138.5%;
+        font-weight:bold;
+        width:370px;
+        margin:0 0 5px 150px;
+        padding-top:30px;
+    }
+    .balloon p {
+        margin-left:150px;
+        width:380px;
+        line-height:1.5;
+    }
+
+h2.title{
+    background:url(http://www.china-adviser.com/img/tumblr/bg_dotline.png) repeat-x bottom;
+    padding:0px 0px 5px 0px;
+    margin:0px 0px 5px 0px;
+}
+
+#block_social_plug_head{
+    background:url(http://www.china-adviser.com/img/tumblr/bg_dotline.png) repeat-x bottom;
+    overflow:hidden;
+    zoom:1;
+    clear:both;
+    margin-top:0px;
+    padding:5px 0px 5px 0px;
+}
+
+#block_social_plug_foot{
+    background:url(http://www.china-adviser.com/img/tumblr/bg_dotline.png) repeat-x;
+    overflow:hidden;
+    zoom:1;
+    clear:both;
+    margin-top:10px;
+    padding:15px 0px 10px 0px;
+}
+
+.social_plug {
+    float:left;
+}
+    /* ここから */
+#blog {
+    list-style-type: none;
+    width: 310px;
+    margin: 3px 0px 3px 3px;
+    padding: 0;
+    background-color:#ffffff;
+    border: 1px solid #ccc;
+}
+
+#blog h3 {
+    font-weight:bold;
+    margin-left: 2px;
+    margin-bottom: 1px;
+    padding: 5px 0 5px 10px;
+    text-decoration: none;
+    border-left: 5px solid #3b5998;
+    background-color: #f6f6f6;
+    color: #333333;
+}
+
+#blog ul {
+
+    background:url(http://www.china-adviser.com/img/common/gnavi_bg.gif) 0 0 repeat-y;
+    padding:8px 10px 10px 0px;
+    margin-bottom:1px;
+}
+
+#blog li {
+    background:url(http://www.china-adviser.com/img/common/ico_navy.gif) 0 2px no-repeat;
+    font-size:93%;
+    padding-left:14px;
+    margin-bottom:5px;
+    margin-left:14px;
+}
+
+#blog li a {
+    text-decoration: none;
+    color: #2275b3;
+}
+
+#blog li a:hover {
+    color: #0099ff;
+}
+.fb-like-box{
+margin: 3px;
+}
+ /* ここまで */
+
+ /* サービスここから */
+.top-box {
+    width:280px;
+    height:180px;
+    border:1px solid #E4E4E4;
+    float:left;
+    margin:5px 0px 10px 5px;
+    background:url(http://www.china-adviser.com/img/common/top_box_bg.jpg) 0 0 repeat-x;
+
+}
+
+.box-inner {
+    padding:10px 9px 8px 9px;
+}
+.box-img {
+    float:left;
+    width:116px;
+    margin-bottom:5px !important;
+}
+.box-img img {
+    border:2px solid #ffffff;
+}
+
+.box-txt {
+    float:right;
+    width:132px;
+}
+.box-txt p {
+    font-size:93%;
+    line-height:1.4;
+    margin-bottom:5px !important;
+    padding-bottom:0 !important;
+}
+
+.doc {
+background:url(http://www.china-adviser.com/img/common/bg_doc.jpg) 0 0 repeat-y;
+padding:5px 18px;
+}
+.doc p {
+margin-bottom:1em;
+}
+.doc-title {
+border-bottom:1px dotted #cccccc;
+margin-right:10px;
+padding-bottom:3px;
+margin-bottom:15px;
+margin-left:10px;
+}
+table.hachione {
+    border-spacing: 2px;
+    width:530px;
+    padding:0px:
+    table-layout: fixed;
+    empty-cells: show;
+    border-collapse: separate;
+    margin: 0px 5px 0px 5px;
+    line-height:20px;
+}
+table.hachione th{
+    width:110px;
+    font-weight: normal;
+    background-color:#93D900;
+    color:#4D4D4D;
+    padding:5px;
+    text-align:center;
+    vertical-align:middle;
+}
+table.hachione td{
+    background-color:#f2f2f2;
+    padding:5px;
+}
+
+ /* お問い合わせここから */
+div#form_btn{
+    margin:10px 0px;
+    text-align:center;
+}
+.form_font{
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.m_b10 {
+    margin-bottom:10px;
+    }
+.error_alert{
+    font-weight:bold;
+    color:#FF0000;
+}
+table.gray{
+    margin:5px 0px 0px 10px;
+    width:560px;
+    background-color: #CCCCCC;
+    border-collapse:separate;
+    border-spacing:1px;
+}
+
+table.gray td{
+    color: #333333;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+    padding:5px;
+}
+
+table.gray td.confirm{
+    padding:2px;
+}
+
+table.gray td.form_ttl{
+    width:200px;
+    background-color: #F5F5F4;
+    border-top:1px solid #FFFFFF;
+    border-left:1px solid #FFFFFF;
+}
+
+table.gray td.confirm_ttl{
+    padding:0px;
+    width:150px;
+    background-color: #F5F5F4;
+    border-top:1px solid #FFFFFF;
+    border-left:1px solid #FFFFFF;
+    vertical-align:middle;
+}
+
+table.gray td.form_data{
+    background-color: #FFFFFF;
+    vertical-align:middle;
+}
+
+table.gray td.confirm_data{
+    padding:0px;
+    background-color: #FFFFFF;
+    vertical-align:middle;
+}
+
+table.gray td.common_ttl{
+    font-size:12px;
+    width:150px;
+    background-color: #F5F5F4;
+    border-top:1px solid #FFFFFF;
+    border-left:1px solid #FFFFFF;
+}
+
+table.gray td.common_data{
+    font-size:12px;
+    background-color: #FFFFFF;
+}
+
+table.gray p.example{
+    font-size:11px;
+    padding:3px 0px 0px 0px;
+}
+
+.attention{
+    color: #FF0000;
+    font-weight:bold;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_text_common{
+    width:280px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_text_large{
+    width:400px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_textarea_little{
+    width:400px;
+    height:100px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+.form_text_postcode1{
+    width:30px;
+    margin:0px 4px 0px 0px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+.form_text_postcode2{
+    width:50px;
+    margin:0px 0px 0px 4px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+.form_text_number{
+    width:50px;
+    margin:0px 4px 0px 4px;
+    padding:3px;
+    font-family:"ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", Arial, Helvetica;
+}
+
+p.form_attention{
+    /*border:1px solid red;*/
+    border:1px solid #FACDE6;
+    color:red;
+    /*font-weight:bold;*/
+    font-size:12px;
+    padding:5px;
+    line-height:20px;
+}
+
+.errMsg {
+    color:red;
+}
+.btn_submit{
+    padding:1px 10px;
+}
+
+/*--------------------------------------
+Tag Cloud
+---------------------------------------*/
+#tag {
+    list-style-type: none;
+    width: 310px;
+    margin: 3px 0px 3px 3px;
+    padding: 0;
+    background-color:#ffffff;
+    border: 1px solid #ccc;
+}
+
+#tag h3 {
+    font-weight:bold;
+    margin-left: 2px;
+    margin-bottom: 1px;
+    padding: 5px 0 5px 10px;
+    text-decoration: none;
+    border-left: 5px solid #3b5998;
+    background-color: #f6f6f6;
+    color: #333333;
+}
+
+#tag ul {
+
+    background:url(http://www.china-adviser.com/img/common/gnavi_bg.gif) 0 0 repeat-y;
+    padding:8px 10px 10px 0px;
+    margin-bottom:1px;
+}
+ul.tag_list li {
+    background:url(http://www.china-adviser.com/img/common/ico_navy.gif) 0 2px no-repeat;
+    font-size:93%;
+    padding-left:14px;
+    margin-bottom:5px;
+    margin-left:14px;
+    display:block !important;
+}
+
+ul.tag_list a {
+    text-decoration: none;
+    color: #2275b3;
+}
+
+ul.tag_list a:hover {
+    color: #0099ff;
+}

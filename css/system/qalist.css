@@ -1,0 +1,538 @@
+/*質問一覧CSS*/
+/*検索*/
+h2.search_title {
+    background-image:url(/img/question/search_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:0px 0 0 33px;
+    text-align:left;
+    height:28px;
+    line-height:28px;
+    }
+
+.title_box{
+    background-color:#FFFFFF;
+    border-top:none;
+    border-bottom:solid;
+    border-left-style:solid;
+    border-right-style:solid;
+    border-width:1px 1px;
+    border-color:#E0E0E0;
+    text-align:left;
+    padding:0px;
+    margin:0px 0px 10px 0px;
+    font-size:14px;
+    line-height:140%;
+    color:#666666;
+}
+
+.search_box{
+    padding:10px 10px 0px 10px;
+}
+
+.title_box dd.search{
+    background-image:url(/img/bulletin/bg_search.gif);
+    background-repeat:repeat-x;
+    background-position:left bottom;
+    font-size:12px;
+}
+
+.title_box dd.search dt{
+    width:80px;
+    float:left;
+    line-height:28px;
+}
+
+.title_box dd.search dd{
+    float:left;
+    line-height:28px;
+}
+
+.title_box .init{
+    margin-top:2px;
+    text-align:right;
+    font-size:12px; 
+}
+
+/*small*/
+ul#qalist {
+    font-size: 0;
+    line-height: 0;
+    margin-bottom:10px;
+}
+
+ul#qalist li{
+/*border:1px red solid;*/
+    list-style:none;
+    text-align:left;
+    padding:7px 0px 7px 0px;
+    margin:0px;
+    background-image: url(/img/common/dotline.gif);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+}
+
+ul#qalist li.list_common{
+    /*height:40px;*/
+}
+
+ul#qalist li.list_common_b{
+    /*height:40px;*/
+    background-color:#f9f9f9;
+}
+
+ul#qalist li.list_extends{
+    /*height:80px;*/
+}
+
+ul#qalist li.list_extends_b{
+    /*height:80px;*/
+    background-color:#f9f9f9;
+}
+
+/*clearfixします*/
+ul#qalist li#search{
+    /*height:80px;*/
+}
+
+/*ul#qalist li.rank{
+    /*height:45px;*/
+    padding:10px 4px 5px 0px;
+}*/
+
+ul#qalist li img{
+    float:left;
+}
+
+ul#qalist li img.common{
+    float:left;
+    padding-top:5px;
+}
+
+ul#qalist li img.extends{
+    float:left;
+    padding-top:20px;
+}
+
+ul#qalist li dl{
+    width:508px;
+    float:left;
+    
+}
+
+ul#qalist li dl.common{
+    padding-left:31px;
+}
+
+ul#qalist li dl dt.question{
+    width:499px;
+    font-size:13px;
+    background-image:url(/img/question/question.gif);
+    background-repeat:no-repeat;
+    padding-left: 20px;
+    line-height: 20px;
+    float:left;
+}
+
+ul#qalist li dl dt.question_finish{
+    width:499px;
+    font-size:13px;
+    background-image:url(/img/question/question_finish.gif);
+    background-repeat:no-repeat;
+    padding-left: 20px;
+    line-height: 20px;
+    float:left;
+}
+
+ul#qalist li dl dd{
+    margin:0px;
+    font-size:12px;
+    color: #666666;
+    padding:0px 0px 0px 0px;
+    display: block;
+    float:left;
+    
+
+}
+ul#qalist li dl dd.teacher{
+    width:43px;
+    clear:both;
+    /*height:40px;*/
+    /*border:1px red solid;*/
+}
+
+ul#qalist li dl dd.extends_txt{
+    word-wrap:break-word;
+    font-size:12px;
+    width:499px;
+    line-height: 20px;
+    /*height:40px;*/
+    /*border:1px red solid;*/
+}
+
+ul#qalist li dl dd.extends_answer_txt{
+    word-wrap:break-word;
+    font-size:12px;
+    width:465px;
+    line-height: 20px;
+    /*height:40px;*/
+    /*border:1px red solid;*/
+}
+
+ul#qalist li dl dd.extends_answer_txt img{
+    vertical-align:middle;
+    float:none;
+    display:inline;
+}
+
+ul#qalist li dl dd.question_txt{
+    word-wrap:break-word;
+    font-size:12px;
+    width:488px;
+    padding-left: 20px;
+}
+
+ul#qalist li dl dd.category{
+    font-size:12px;
+    float:left;
+    width:90px;
+    padding-left: 20px;
+    background-image:url(/img/common/category_index.gif);
+    background-repeat:no-repeat;
+    background-position:left top;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+ul#qalist li dl dd.category_blank{
+    font-size:12px;
+    float:left;
+    text-align:left;
+    width:90px;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+ul#qalist li dl dd.txt{
+    font-size:12px;
+    float:left;
+    width:338px;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+ul#qalist li dl dd.txt img{
+    float:none;
+    display:inline;
+    vertical-align:middle;
+}
+
+ul#qalist li dl dd.answer{
+    font-size:12px;
+    float:right;
+    text-align:right;
+    width:60px;
+    background-image:url(/img/common/letter_on.gif);
+    background-repeat:no-repeat;
+    background-position:left top;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+ul#qalist li dl dd.answer_no{
+    font-size:12px;
+    float:right;
+    text-align:right;
+    width:60px;
+    background-image:url(/img/common/letter_off.gif);
+    background-repeat:no-repeat;
+    background-position:left top;
+    line-height: 20px;
+    /*height:20px;*/
+}
+ul#qalist li dl dd.answer_blank{
+    font-size:12px;
+    float:left;
+    text-align:right;
+    width:60px;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+/*large*/
+
+ul#qalist_l {
+    font-size: 0;
+    line-height: 0;
+    margin-bottom:10px;
+}
+
+ul#qalist_l li{
+    list-style:none;
+    text-align:left;
+    padding:7px 0px 7px 0px;
+    margin:0px;
+    background-image: url(/img/common/dotline.gif);
+    background-repeat: repeat-x;
+    background-position: left bottom;
+}
+
+ul#qalist_l li.list_common{
+    /*height:40px;*/
+}
+
+ul#qalist_l li.list_common_b{
+    /*height:40px;*/
+    background-color:#f9f9f9;
+}
+
+ul#qalist_l li.list_extends{
+    /*height:80px;*/
+}
+
+ul#qalist_l li.list_extends_b{
+    /*height:80px;*/
+    background-color:#f9f9f9;
+}
+
+/*clearfixします*/
+ul#qalist_l li#search{
+    /*height:80px;*/
+}
+
+ul#qalist_l li img{
+    float:left;
+}
+
+ul#qalist_l li img.common{
+    float:left;
+    padding-top:5px;
+}
+
+ul#qalist_l li img.extends{
+    float:left;
+    padding-top:20px;
+}
+
+ul#qalist_l li dl{
+    width:720px;
+    float:left;
+    
+}
+
+ul#qalist_l li dl.common{
+    padding-left:31px;
+}
+
+ul#qalist_l li dl dt.question{
+    width:711px;
+    font-size:13px;
+    display: block;
+    background-image:url(/img/question/question.gif);
+    background-repeat:no-repeat;
+    padding-left: 20px;
+    line-height: 20px;
+    float:left;
+}
+
+ul#qalist_l li dl dt.question_finish{
+    width:711px;
+    font-size:13px;
+    display: block;
+    background-image:url(/img/question/question_finish.gif);
+    background-repeat:no-repeat;
+    padding-left: 20px;
+    line-height: 20px;
+    float:left;
+}
+
+ul#qalist_l li dl dd{
+    margin:0px;
+    font-size:12px;
+    color: #777777;
+    padding:0px 0px 0px 0px;
+    display: block;
+    float:left;
+    
+
+}
+ul#qalist_l li dl dd.teacher{
+    width:43px;
+    /*height:40px;*/
+    clear:both;
+    /*border:1px red solid;*/
+}
+
+ul#qalist_l li dl dd.extends_answer_txt_l{
+    word-wrap:break-word;
+    font-size:12px;
+    width:671px;
+    line-height: 20px;
+    /*height:40px;*/
+    /*border:1px red solid;*/
+}
+
+ul#qalist_l li dl dd.extends_answer_txt_l img{
+    float:none;
+    display:inline;
+    vertical-align:middle;
+}
+
+ul#qalist_l li dl dd.extends_txt_l{
+    word-wrap:break-word;
+    font-size:12px;
+    width:711px;
+    line-height: 20px;
+    /*height:20px;*/
+    /*border:1px red solid;*/
+}
+
+ul#qalist_l li dl dd.extends_txt_l img{
+    float:none;
+    display:inline;
+    vertical-align:middle;
+}
+
+ul#qalist_l li dl dd.question_txt{
+    word-wrap:break-word;
+    font-size:12px;
+    width:488px;
+    padding-left: 20px;
+}
+
+ul#qalist_l li dl dd.category{
+    /*border:1px red solid;*/
+    float:left;
+    width:90px;
+    padding-left: 20px;
+    background-image:url(/img/common/category_index.gif);
+    background-repeat:no-repeat;
+    background-position:left top;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+ul#qalist_l li dl dd.category_blank{
+    font-size:12px;
+    float:left;
+    text-align:left;
+    width:90px;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+ul#qalist_l li dl dd.txt{
+    /*border:1px red solid;*/
+    float:left;
+    width:530px;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+ul#qalist_l li dl dd.txt img{
+    float:none;
+    display:inline;
+    vertical-align:middle;
+}
+
+ul#qalist_l li dl dd.answer{
+    font-size:12px;
+    float:right;
+    text-align:right;
+    width:60px;
+    background-image:url(/img/common/letter_on.gif);
+    background-repeat:no-repeat;
+    background-position:left top;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+ul#qalist_l li dl dd.answer_no{
+    font-size:12px;
+    float:right;
+    text-align:right;
+    width:60px;
+    background-image:url(/img/common/letter_off.gif);
+    background-repeat:no-repeat;
+    background-position:left top;
+    line-height: 20px;
+    /*height:20px;*/
+}
+ul#qalist_l li dl dd.answer_blank{
+    font-size:12px;
+    float:left;
+    text-align:right;
+    width:60px;
+    line-height: 20px;
+    /*height:20px;*/
+}
+
+div#listnavi {
+    border-bottom:1px solid #CCCCCC;
+    height:26px;
+    width:550px;
+    margin:0px auto 5px auto;
+    }
+    
+div#listnavi li {
+    float:left;
+    list-style:none;
+    width:90px;
+    height:26px;
+    line-height:26px;
+    }
+
+div#listnavi .on {
+    background-image:url(/img/common/tab_on.jpg);
+    background-repeat:no-repeat;
+    margin-left:5px;
+    text-align:center;
+    /*padding-top:5px;*/
+    }
+
+div#listnavi .off {
+    background-image:url(/img/common/tab_off.jpg);
+    background-repeat:no-repeat;
+    margin-left:5px;
+    text-align:center;
+    /*padding-top:5px;*/
+    }
+    
+div#listnavi a:link {
+    text-decoration:none;
+    color:#EE55AA;
+    font-size:12px;
+    font-weight:normal;
+    }
+
+div#listnavi a:visited {
+    text-decoration:none;
+    color:#EE55AA;
+    font-size:12px;
+    font-weight:normal;
+    }
+
+div#listnavi a:hover {
+    text-decoration:none;
+    color:#EE55AA;
+    font-size:12px;
+    font-weight:normal;
+    }
+    
+div#listnavi a:active {
+    text-decoration:none;
+    color:#EE55AA;
+    font-size:12px;
+    font-weight:normal;
+    }
+
+.question_help{
+    text-align:left;
+}
+
+.question_help img{
+    vertical-align:middle;
+}

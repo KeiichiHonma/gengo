@@ -1,0 +1,23 @@
+table.hachione {
+    border-spacing: 2px;
+    width:664px;
+    padding:0px:
+    table-layout: fixed;
+    empty-cells: show;
+    border-collapse: separate;
+    margin-bottom: 20px;
+    line-height:20px;
+}
+table.hachione th{
+    width:110px;
+    font-weight: normal;
+    background-color:#93D900;
+    color:#4D4D4D;
+    padding:5px;
+    text-align:center;
+    vertical-align:middle;
+}
+table.hachione td{
+    background-color:#f2f2f2;
+    padding:5px;
+}

@@ -1,0 +1,252 @@
+table{
+border-collapse:collapse;
+border-spacing:0;
+}
+h2.search_title {
+    background-image:url(/img/system/search_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:0px 0 0 33px;
+    text-align:left;
+    height:28px;
+    line-height:28px;
+    }
+
+h3.search_bulletin_help {
+    background-image:url(/img/system/search_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:0px 0 0 33px;
+    text-align:left;
+    height:28px;
+    line-height:28px;
+    }
+
+.help_box{
+    background-color:#FFFFFF;
+    border-top:none;
+    border-bottom:solid;
+    border-left-style:solid;
+    border-right-style:solid;
+    border-width:1px 1px;
+    border-color:#E0E0E0;
+    text-align:left;
+    padding:10px;
+    margin:0px 0px 0px 0px;
+    font-size:12px;
+    line-height:140%;
+    color:#666666;
+}
+
+.title_box{
+    background-color:#FFFFFF;
+    border-top:none;
+    border-bottom:solid;
+    border-left-style:solid;
+    border-right-style:solid;
+    border-width:1px 1px;
+    border-color:#E0E0E0;
+    text-align:left;
+    padding:0px;
+    margin:0px 0px 10px 0px;
+    font-size:14px;
+    line-height:140%;
+    color:#666666;
+}
+
+/*search*/
+.search_box{
+    padding:10px 10px 0px 10px;
+}
+
+.title_box dd.search{
+    background-image:url(/img/system/bg_search.gif);
+    background-repeat:repeat-x;
+    background-position:left bottom;
+    font-size:12px;
+}
+
+.title_box dd.search dt{
+    width:80px;
+    float:left;
+    line-height:28px;
+}
+
+.title_box dd.search dt.keyword_list{
+    width:80px;
+    float:left;
+    padding:0px 0px 0px 20px;
+    background-image:url(/img/system/keyword.gif);
+    background-repeat:no-repeat;
+    background-position:left 6px;
+    line-height:28px;
+}
+
+.title_box dd.search dt.subtheme_list{
+    width:80px;
+    float:left;
+    padding:0px 0px 0px 20px;
+    background-image:url(/img/system/subtheme.gif);
+    background-repeat:no-repeat;
+    background-position:left 6px;
+    line-height:28px;
+}
+
+.title_box dd.search dd.theme_data{
+    float:left;
+    line-height:28px;
+}
+
+.title_box dd.search dd.theme_data .on{
+    background-color: #d5effe;
+    padding:2px 0px;
+}
+
+.title_box .init{
+    margin-top:2px;
+    text-align:right;
+    font-size:12px; 
+}
+
+.title_box .init img{
+    display:inline;
+    vertical-align:middle;
+}
+
+.user_list dd.index_line{
+    text-align:left;
+    height:24px;
+    line-height:24px;
+    color:#EE55AA;
+    padding:2px 0px;
+    background-image:url(/img/system/bg_search.gif);
+    background-repeat:repeat-x;
+    background-position:left bottom;
+    clear:both;
+    
+}
+
+.user_list dd.line{
+    text-align:left;
+    height:24px;
+    line-height:24px;
+    color:#666666;
+    padding:2px 0px;
+    background-image:url(/img/system/bg_list.gif);
+    background-repeat:repeat-x;
+    background-position:left bottom;
+    clear:both;
+}
+
+.user_list dd.name_title{
+    float:left;
+    width:182px;
+}
+
+.user_list dd.domain_title{
+    float:left;
+    width:60px;
+    padding-left:20px;
+}
+
+.user_list dd.directory_title{
+    background-image:url(/img/system/status.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    float:left;
+    width:80px;
+    padding-left:20px;
+}
+
+.user_list dd.url_title{
+    background-image:url(/img/system/customer_no.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    float:left;
+    width:370px;
+    padding-left:20px;
+    /*border:1px red solid;*/
+}
+
+.user_list dd.absolute_title{
+    background-image:url(/img/system/customer_no.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    float:left;
+    width:500px;
+    padding-left:20px;
+    /*border:1px red solid;*/
+}
+
+.user_list dd.name{
+    background-image:url(/img/system/user.gif);
+    background-repeat:no-repeat;
+    background-position:left 4px;
+    padding-left:20px;
+    float:left;
+    width:162px;
+}
+
+.user_list dd.common{
+    float:left;
+    width:80px;
+}
+
+.user_list dd.directory{
+    float:left;
+    width:100px;
+}
+
+.user_list dd.url{
+    float:left;
+    width:390px;
+}
+
+.user_list dd.absolute{
+    float:left;
+    width:520px;
+}
+
+dd.btn{
+    border-top:solid;
+    border-bottom:none;
+    border-left-style:none;
+    border-right-style:none;
+    border-width:1px 1px;
+    border-color:#E0E0E0;
+    color:#666666;
+    padding:2px;
+    text-align:center;
+}
+
+dd.btn_no_login{
+    border-top:none;
+    border-bottom:none;
+    border-left-style:none;
+    border-right-style:none;
+    border-width:1px 1px;
+    border-color:#E0E0E0;
+    color:#666666;
+    padding:2px;
+    text-align:center;
+    line-height:30px;
+}
+
+h2.search_title {
+    background-image:url(/img/system/search_title.jpg);
+    background-repeat:no-repeat;
+    margin:0;
+    font-size:14px;
+    color:#EE55AA;
+    font-weight:normal;
+    padding:0px 0 0 33px;
+    text-align:left;
+    height:28px;
+    line-height:28px;
+    }
