@@ -15,7 +15,7 @@
 <div id="roof_l_white">
     <div class="inside_l">
 
-    <form action="{$smarty.const.ADVISERURL}/system/login" method="post">
+    <form action="{$smarty.const.GENGOURL}/system/login" method="post">
     <div id="one_parts">
      <div id="action">
       <div class="center_block">

@@ -739,6 +739,7 @@ class PHPWebSocket
 
 	function log( $message )
 	{
+        ini_set('date.timezone', 'Asia/Tokyo');
 		echo date('Y-m-d H:i:s: ') . $message . "\n";
 	}
 

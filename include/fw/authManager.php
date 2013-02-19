@@ -2,20 +2,20 @@
 define('SECRET_KEY',                 'ILUNAKEY');
 
 //user
-define('SESSION_U_LOGIN',            'COUPONULOGIN');
-define('SESSION_U_HASH',             'COUPONUHASH');
-define('SESSION_U_UID',              'COUPONUUID');
-define('SESSION_U_GIVEN_NAME',       'COUPONUNAME');
-define('SESSION_U_CUSTOMER_NO',      'COUPONUCUSTOMERNO');
-define('SESSION_U_VALIDATE_TIME',    'COUPONUVALIDATETIME');
+define('SESSION_U_LOGIN',            'GENGOULOGIN');
+define('SESSION_U_HASH',             'GENGOUHASH');
+define('SESSION_U_UID',              'GENGOUUID');
+define('SESSION_U_GIVEN_NAME',       'GENGOUNAME');
+define('SESSION_U_CUSTOMER_NO',      'GENGOUCUSTOMERNO');
+define('SESSION_U_VALIDATE_TIME',    'GENGOUVALIDATETIME');
 
 //manager
-define('SESSION_M_LOGIN',            'COUPONMLOGIN');
-define('SESSION_M_HASH',             'COUPONMHASH');
-define('SESSION_M_MID',              'COUPONMMID');
-define('SESSION_M_GIVEN_NAME',       'COUPONMNAME');
-define('SESSION_M_TYPE',             'COUPONMTYPE');
-define('SESSION_M_SID',              'COUPONMSID');
+define('SESSION_M_LOGIN',            'GENGOMLOGIN');
+define('SESSION_M_HASH',             'GENGOMHASH');
+define('SESSION_M_MID',              'GENGOMMID');
+define('SESSION_M_GIVEN_NAME',       'GENGOMNAME');
+define('SESSION_M_TYPE',             'GENGOMTYPE');
+define('SESSION_M_SID',              'GENGOMSID');
 
 class authManager
 {
@@ -100,30 +100,19 @@ die();*/
         $con->session->set($this->session_key_oid,$login_object[0]['_id']);
         $con->session->set($this->session_key_given_name,$login_object[0]['col_given_name']);
         
-        
         //manager
         if(isset($login_object[0]['col_type'])){
             $con->session->set($this->session_key_login_type,$login_object[0]['col_type']);
             $con->session->set($this->session_key_login_name,$login_object[0]['col_mail']);
             $con->session->set($this->session_key_login_hash,self::makeHash($login_object[0]['col_mail']));
-            if(strcasecmp($login_object[0]['col_type'],TYPE_M_SHOP) == 0){
-                require_once('manager/shop/logic.php');
-                $sc_logic = new shopLogic(TRUE);
-                $shop = $sc_logic->getOneShopForMID($login_object[0]['_id']);
-                if($shop) $con->session->set($this->session_key_sid,$shop[0]['_id']);
-            }
         //user
         }else{
-            $con->session->set($this->session_key_login_name,$login_object[0]['col_account']);
-            $con->session->set($this->session_key_login_hash,self::makeHash($login_object[0]['col_account']));
-            $con->session->set($this->session_key_customer_no,$login_object[0]['col_customer_no']);
-            $con->session->set($this->session_key_validate_time,$login_object[0]['col_validate_time']);
         }
         
     }
     public function unsetLogin(){
-        if (isset($_COOKIE[COUPON_SESSION_NAME])) {
-            setcookie(COUPON_SESSION_NAME, '', time() - 1800, '/');
+        if (isset($_COOKIE[GENGO_SESSION_NAME])) {
+            setcookie(GENGO_SESSION_NAME, '', time() - 1800, '/');
         }
         $_SESSION = array();
         session_destroy();

@@ -105,6 +105,10 @@ class database
         $this->makeDebug();
 
         if($con->isDebug){
+            if($con->isCommand){
+                var_dump($this->err);
+                die();
+            }
             $con->t->assign('errorlist', $this->err);
             $this->rollback();//ロールバック
             $con->t->display('debug.tpl');

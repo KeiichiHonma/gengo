@@ -1,18 +1,13 @@
 <?php
-//--[ 前処理 ]--------------------------------------------------------------
 require_once('manager/prepend.php');
 
-//お知らせ
-//require_once('message/logic.php');
-//$ms_logic = new messageSystemLogic();
-//$message = $ms_logic->getUserMessage();
-//$con->t->assign('message',$message);
-if(strcasecmp($con->session->get(SESSION_M_TYPE),TYPE_M_ADMIN) == 0){
-    $page = 'system/backend';
+if($con->isStage){
+    $con->t->assign('domain','gengo.813.co.jp');
 }else{
-    $con->t->assign('mid',$con->session->get(SESSION_M_MID));
-    
-    $page = 'system/client';
+    $con->t->assign('domain','gengo.apollon.corp.813.co.jp');
 }
+$con->t->assign('mid',$con->session->get(SESSION_M_MID));
+$con->t->assign('manager',$con->session->get(SESSION_M_GIVEN_NAME));
+
 $con->append($page);
 ?>

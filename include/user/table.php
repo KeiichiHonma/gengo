@@ -2,20 +2,19 @@
 require_once('fw/tableManager.php');
 class userTable extends tableManager
 {
+    //check内のキーは数時である必要あり
     static private $table_info = array
         (
-            array('column'=>'_id',               'as'=>'user_id',   'type'=>MINIMUM,   'input'=>FALSE, 'group'=>null),
-            array('column'=>'ctime',             'as'=>null,        'type'=>COMMON,    'input'=>FALSE, 'group'=>null),
-            array('column'=>'mtime',             'as'=>null,        'type'=>COMMON,    'input'=>FALSE, 'group'=>null),
-            array('column'=>'name',              'as'=>null,        'type'=>COMMON,    'input'=>TRUE,  'group'=>null),
-            array('column'=>'directory',         'as'=>null,        'type'=>COMMON,    'input'=>TRUE,  'group'=>null),
-            array('column'=>'url',               'as'=>null,        'type'=>COMMON,    'input'=>TRUE,  'group'=>null),
-            array('column'=>'domain',            'as'=>null,        'type'=>COMMON,    'input'=>TRUE,  'group'=>null),
-            array('column'=>'depth',             'as'=>null,        'type'=>COMMON,    'input'=>TRUE,  'group'=>null),
-            array('column'=>'rollover',          'as'=>null,        'type'=>COMMON,    'input'=>TRUE,  'group'=>null),
-            array('column'=>'direct',            'as'=>null,        'type'=>COMMON,    'input'=>TRUE,  'group'=>null),
-            array('column'=>'replace',           'as'=>null,        'type'=>COMMON,    'input'=>TRUE,  'group'=>null),
-            array('column'=>'validate',          'as'=>null,        'type'=>COMMON,    'input'=>TRUE,  'group'=>null)
+            array('column'=>'_id',        'as'=>'user_id', 'type'=>COMMON, 'input'=>FALSE, 'group'=>null),
+            array('column'=>'ctime',      'as'=>null,         'type'=>ALL,    'input'=>FALSE, 'group'=>null),
+            array('column'=>'mtime',      'as'=>null,         'type'=>ALL,    'input'=>FALSE, 'group'=>null),
+            array('column'=>'mail',       'as'=>null,         'type'=>COMMON, 'input'=>TRUE,  'group'=>'mail'),
+            array('column'=>'given_name', 'as'=>null,         'type'=>COMMON, 'input'=>TRUE,  'group'=>'name'),
+            array('column'=>'skype_name', 'as'=>null,         'type'=>COMMON, 'input'=>TRUE,  'group'=>'name'),
+            array('column'=>'password',   'as'=>null,         'type'=>COMMON, 'input'=>TRUE,  'group'=>'password'),
+            array('column'=>'salt',       'as'=>null,         'type'=>ALL,    'input'=>FALSE, 'group'=>null),
+            array('column'=>'score',      'as'=>null,         'type'=>COMMON, 'input'=>FALSE,  'group'=>null),
+            array('column'=>'validate',   'as'=>null,         'type'=>COMMON, 'input'=>FALSE, 'group'=>null)
         );
     
     static public function get($type = COMMON){
@@ -32,5 +31,12 @@ class userTable extends tableManager
         return parent::getInput(self::$table_info);
     }
 
+    static public function getMail(){
+        return parent::getGroup(self::$table_info,'mail');
+    }
+
+    static public function getPassword(){
+        return parent::getGroup(self::$table_info,'password');
+    }
 }
 ?>

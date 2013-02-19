@@ -81,6 +81,17 @@ class checkManager
         return FALSE;
     }
 
+    static protected function checkSkypeName($param,$arg){
+        if(!isset($param)){
+            return FALSE;
+        }else{
+            if (preg_match("/^[a-zA-Z0-9,.-_]{6,32}$/", $param)) {
+                return TRUE;
+            }
+        }
+        return FALSE;
+    }
+
     static protected function checkDate($param,$arg){
         if(is_null($param)) return TRUE;//nullだったらOK
         //現在時間でチェック

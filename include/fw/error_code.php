@@ -61,7 +61,7 @@ define('E_SYSTEM_PARAM_WRONG',             'KUJAPAN_SYSTEM_00015');
 
 define('E_SYSTEM_MANAGER_EXISTS',            'KUJAPAN_SYSTEM_00016');
 define('E_SYSTEM_GROUP_EXISTS',              'KUJAPAN_SYSTEM_00017');
-define('E_SYSTEM_COUPON_EXISTS',             'KUJAPAN_SYSTEM_00018');
+define('E_SYSTEM_GENGO_EXISTS',             'KUJAPAN_SYSTEM_00018');
 
 define('KUJAPAN_SYSTEM_00001',              'ディレクトリが存在しません');
 define('KUJAPAN_SYSTEM_00002',              'ディレクトリへの書き込み権限がありません');

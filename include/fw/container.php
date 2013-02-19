@@ -23,6 +23,8 @@ class container
     public $isAlipay = TRUE;
     public $isMaintenance = FALSE;
     public $isSystem = FALSE;
+    public $isCommand = FALSE;
+    
     public $lastJudge = TRUE;//ロールバックかコミットの判断
     public $session;
     public $csrf;
@@ -137,8 +139,8 @@ class container
                 define('SERVER_NAME',      'china-adviser.apollon.corp.813.co.jp');
             }
         }
-        define('ADVISERURL',            'http://'.$_SERVER['SERVER_NAME']);
-        define('ADVISERURLSSL',         'https://'.$_SERVER['SERVER_NAME']);
+        define('GENGOURL',            'http://'.$_SERVER['SERVER_NAME']);
+        define('GENGOURLSSL',         'https://'.$_SERVER['SERVER_NAME']);
 
         //メンテナンスモード
         if($this->ini['common']['isMaintenance'] == 1){
@@ -158,7 +160,7 @@ class container
                     $this->t->assign('maintenance',$this->isMaintenance);
                 }else{
                     header( "HTTP/1.1 302 Moved Temporarily" );
-                    header("Location: ".ADVISERURL.'/maintenance');
+                    header("Location: ".GENGOURL.'/maintenance');
                     die();
                 }
             }
@@ -174,8 +176,8 @@ class container
 
     public function safeExitRedirect($page,$isSSL = FALSE){
         if($this->lastJudge) $this->db->commit();
-        //$isSSL ? header("Location: ".ADVISERURLSSL.$page) : header("Location: ".ADVISERURL.$page);
-        header("Location: ".ADVISERURL.$page);
+        //$isSSL ? header("Location: ".GENGOURLSSL.$page) : header("Location: ".GENGOURL.$page);
+        header("Location: ".GENGOURL.$page);
         die();
     }
 
@@ -186,7 +188,7 @@ class container
     //no commit
     public function errorExitRedirect($page,$isSSL = FALSE){
         //header( "HTTP/1.1 301 Moved Permanently" );
-        $isSSL ? header("Location: ".ADVISERURLSSL."/".$page) : header("Location: ".ADVISERURL."/".$page);
+        $isSSL ? header("Location: ".GENGOURLSSL."/".$page) : header("Location: ".GENGOURL."/".$page);
         die();
     }
 
@@ -197,7 +199,7 @@ class container
     }
 
     //リダイレクト用
-    function redraw($url = ADVISERURL,$isPCURL = FALSE){
+    function redraw($url = GENGOURL,$isPCURL = FALSE){
         if($this->lastJudge) $this->db->commit();
         header("Location: ".$url.$_SERVER['REQUEST_URI']);
         die();

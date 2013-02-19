@@ -20,11 +20,11 @@ class positionManager
             if($path != ''){
                 $array = $array[$path];
                 if($path != 'index'){
-                    //$url .= $array['ssl'] ? ADVISERURLSSL : ADVISERURL;
+                    //$url .= $array['ssl'] ? GENGOURLSSL : GENGOURL;
                     //並列の場所にindexが存在するか確認する
                     if(array_key_exists('index',$before_array)){
                         $url .= $i == 1 ? '/' : $before_path.'/';
-                        $http = $before_array['index']['ssl'] ? ADVISERURLSSL : ADVISERURL;
+                        $http = $before_array['index']['ssl'] ? GENGOURLSSL : GENGOURL;
                         self::$position[] = array('url'=>$http.$url,'name'=>$before_array['index'][$name_key]);//1つ前のindex
                     }else{
                         $url .= $before_path.'/';
@@ -34,7 +34,7 @@ class positionManager
                     if(array_key_exists($name_key,$array)){
                         //最終階層だった
                         $url .= $path;
-                        $http = $array['ssl'] ? ADVISERURLSSL : ADVISERURL;
+                        $http = $array['ssl'] ? GENGOURLSSL : GENGOURL;
                         //定義関数が必要なページか確認
                         if(!is_null($array['func'])){
                             $arg = call_user_func(array('positionManager',$array['func']));
@@ -49,7 +49,7 @@ class positionManager
                 //indexが指定された
                 }else{
                     $url .= $i == 1 ? '/' : $before_path.'/';//トップのindex処理
-                    $http = $array['ssl'] ? ADVISERURLSSL : ADVISERURL;
+                    $http = $array['ssl'] ? GENGOURLSSL : GENGOURL;
                     self::$position[] = array('url'=>$http.$url,'name'=>$array[$name_key]);
                 }
                 if($count == $i){

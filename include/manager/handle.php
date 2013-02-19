@@ -37,9 +37,14 @@ class managerHandle extends handleManager
         return parent::updateRow(T_MANAGER,$this->parameter);
     }
 
-    //学校のみ表示名変更可能
     public function updateNameRow(){
         $this->parameter->setNameUpdate();
+        //$this->setDebug();
+        return parent::updateRow(T_MANAGER,$this->parameter);
+    }
+
+    public function updateStatusRow($mid,$status){
+        $this->parameter->setStatusUpdate($mid,$status);
         //$this->setDebug();
         return parent::updateRow(T_MANAGER,$this->parameter);
     }

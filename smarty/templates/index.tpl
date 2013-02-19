@@ -10,72 +10,60 @@
         #log {width:100%;height:400px}
         #message {width:100%;line-height:20px}
     </style>
+{/literal}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="/js/fancywebsocket.js"></script>
     <script>
         var Server;
 
-        function log( text ) {
+        function log( text ) {ldelim}
             $log = $('#log');
             //Add text to log
             $log.append(($log.val()?"\n":'')+text);
             //Autoscroll
             $log[0].scrollTop = $log[0].scrollHeight - $log[0].clientHeight;
-        }
+        {rdelim}
 
-        function send( text ) {
+        function send( text ) {ldelim}
             Server.send( 'message', text );
-        }
+        {rdelim}
 
-        $(document).ready(function() {
+        $(document).ready(function() {ldelim}
             log('Connecting...');
-            //Server = new FancyWebSocket('ws://127.0.0.1:9300');
-            //Server = new FancyWebSocket('ws://192.168.0.5:9300');
-            Server = new FancyWebSocket('ws://gengo.813.co.jp:9300');
-
-            //$('#message').keypress(function(e) {
-                //if ( e.keyCode == 13 && this.value ) {
-                //if ( $('#submit').click() && this.value ) {
-                    //log( 'You: ' + this.value );
-                    //send( this.value );
-
-                    //$(this).val('');
-                //}
-            //});
-            
-            $('#message').keypress(function(e) {
+            Server = new FancyWebSocket('ws://{$domain}:9300');
+            $('#message').keypress(function(e) {ldelim}
                 var mes = this;
-                $(document).ready(function(){
-                    $("#button1").click(function(){
-                        if ( mes.value ) {
+                $(document).ready(function(){ldelim}
+                    $("#button1").click(function(){ldelim}
+                        if ( mes.value ) {ldelim}
                             log( 'You: ' + mes.value );
                             send( mes.value );
 
                             $(mes).val('');
-                        }
-                    });
-                });
-            });
+                        {rdelim}
+                    {rdelim});
+                {rdelim});
+            {rdelim});
 
             //Let the user know we're connected
-            Server.bind('open', function() {
+            Server.bind('open', function() {ldelim}
                 log( "Connected." );
-            });
+            {rdelim});
 
             //OH NOES! Disconnection occurred.
-            Server.bind('close', function( data ) {
+            Server.bind('close', function( data ) {ldelim}
                 log( "Disconnected." );
-            });
+            {rdelim});
 
             //Log any messages sent from server
-            Server.bind('message', function( payload ) {
+            Server.bind('message', function( payload ) {ldelim}
                 log( payload );
-            });
+            {rdelim});
 
             Server.connect();
-        });
+        {rdelim});
     </script>
-{/literal}
+
 </head>
 
 <body>

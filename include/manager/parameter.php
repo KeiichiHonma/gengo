@@ -37,10 +37,16 @@ class managerParameter extends parameterManager
         $this->setPasswordParameter();
     }
 
-    //学校の表示名を変更可能
     public function setNameUpdate(){
         parent::readyUpdateParameter($_POST['mid'],TRUE,$this->timestamp);
         $this->setNameParameter();
+    }
+
+    public function setStatusUpdate($mid,$status){
+        parent::readyUpdateParameter($mid,TRUE,$this->timestamp);
+        $this->parameter['status'] = $status;
+        //busyに変更の場合scoreアップ
+        if(strcasecmp($status,STATUS_BUSY) == 0) $this->parameter['score'] = array('increment'=>'col_score+1');//+1更新フォーマット
     }
 
     public function setDelete(){

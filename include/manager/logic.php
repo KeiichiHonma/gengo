@@ -36,6 +36,18 @@ class managerLogic extends logicManager
         return parent::getResult(T_MANAGER,A_MANAGER);
     }
 
+    function getStatusManager(){
+        $this->addSelectColumn(managerTable::get());
+        $this->validateCondition();
+        parent::setCond('col_type',TYPE_M_MANAGER);
+        parent::setCond('col_status',STATUS_FREE);
+        $order = array('column'=>'col_score','desc_asc'=>DATABASE_ASC);
+        $this->addOrderColumn($order['column'],$order['desc_asc']);
+        $this->limit(0,1);
+        //return parent::getDebug(T_MANAGER,A_MANAGER);
+        return parent::getResult(T_MANAGER);
+    }
+
     function getTypeManager($type = ALL){
         $this->addSelectColumn(managerTable::get($type));
         $this->validateCondition();

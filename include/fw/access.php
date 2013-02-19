@@ -38,7 +38,7 @@ class applicationAccess extends errorManager
     public function isShopCoupon($cid){
         require_once('coupon/logic.php');
         $logic = new couponLogic();
-        if($logic->checkOwner($cid) === FALSE) parent::throwError(E_COUPON_ACCESS_WRONG);
+        if($logic->checkOwner($cid) === FALSE) parent::throwError(E_GENGO_ACCESS_WRONG);
     }
 }
 ?>

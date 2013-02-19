@@ -19,7 +19,7 @@
     {include file="include/system/navi.inc"}
     <h2 class="h_title">マネージャー（店舗アカウント）登録</h2>
     <p class="m_b10">以下の項目を確認して[登録]ボタンをクリックしてください。</p>
-    <form id="adviserForm" name="adviserForm" action= "{$smarty.const.ADVISERURL}/system/manager/entry/input" method="post">
+    <form id="gengoForm" name="gengoForm" action= "{$smarty.const.GENGOURL}/system/manager/entry/input" method="post">
 
         <table id="suggest">
         <tr>

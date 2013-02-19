@@ -19,7 +19,7 @@
     {include file="include/system/navi.inc"}
     <h2 class="h_title">マネージャー削除</h2>
     <p class="m_b10">以下の項目を入力して[削除]ボタンをクリックしてください。<span class="attention">＊</span>の項目は必須となります。</p>
-    <form id="adviserForm" name="adviserForm" action= "{$smarty.const.ADVISERURL}/system/manager/drop/input/mid/{$mid}" method="post">
+    <form id="gengoForm" name="gengoForm" action= "{$smarty.const.GENGOURL}/system/manager/drop/input/mid/{$mid}" method="post">
 
     {foreach from=$form key="group_name" item="form_data" name="form_data"}
     <table id="suggest">

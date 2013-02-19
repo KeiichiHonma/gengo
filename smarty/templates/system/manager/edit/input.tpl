@@ -19,7 +19,7 @@
         {include file="include/system/navi.inc"}
         <h2 class="h_title">マネージャー情報変更</h2>
         <p class="m_b10">以下の項目を入力して[変更]ボタンをクリックしてください。<span class="attention">＊</span>の項目は必須となります。</p>
-        <form id="adviserForm" name="adviserForm" action= "{$smarty.const.ADVISERURL}/system/manager/edit/input/mid/{$manager.0._id}" method="post">
+        <form id="gengoForm" name="gengoForm" action= "{$smarty.const.GENGOURL}/system/manager/edit/input/mid/{$manager.0._id}" method="post">
 
         <table id="suggest">
         <tr>

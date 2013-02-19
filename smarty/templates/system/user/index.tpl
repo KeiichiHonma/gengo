@@ -3,48 +3,50 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 {include file="include/system/seo.inc"}
-<link type="text/css" rel="stylesheet" href="/css/system/contents.css" />
-<link type="text/css" rel="stylesheet" href="/css/system/support.css" />
+{include file="include/system/css.inc"}
 {include file="include/system/js.inc"}
 <link rel="shortcut icon" href="/img/common/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/img/common/favicon.ico" type="image/x-icon" />
 </head>
 <body>
 <div id="wrapper">
+{*サイトポジション*}
+{include file="include/system/position.inc"}
 <div id="page">
 <div id="main_l">
-{include file="include/system/logout.inc"}
 <div id="roof_l_white">
     <div class="inside_l">
-        {include file="include/system/navi.inc"}
-        <h2 class="h_title">ユーザー一覧</h2>
-        {*管理者のみ*}{if $login_type == $smarty.const.TYPE_M_ADMIN}<a href="{$smarty.const.ADVISERURL}/system/user/entry/input">登録する</a>{/if}
-        {if $user}
-            {include file="include/system/sp.inc"}
-            <dl class="user_list">
-                <dd class="index_line">
-                    <dl>
-                        <dd class="name_title">ユーザー名</dd>
-                        <dd class="domain_title">&nbsp;</dd>
-                        <dd class="directory_title">ディレクトリ名</dd>
-                        <dd class="url_title">クロールURL</dd>
-                    </dl>
-                </dd>
-        {foreach from=$user key="key" item="value" name="user"}
-                <dd class="line">
-                    <dl>
-                        <dd class="name"><a href="{$smarty.const.ADVISERURL}/system/user/view/uid/{$value._id}">{$value.col_name}</a></dd>
-                        <dd class="common"><a href="{$smarty.const.ADVISERURL}/system/seo/index/uid/{$value._id}">SEO一覧</a></dd>
-                        <dd class="directory">{$value.col_directory}</dd>
-                        <dd class="url"><a href="{$value.col_url}" target"_blank">{$value.col_url|make_strim:70}</a></dd>
-                    </dl>
-                </dd>
-        {/foreach}
-            </dl>
-            {include file="include/system/sp.inc"}
-        {else}
-        <br />ユーザーが存在しません。
-        {/if}
+    {include file="include/system/navi.inc"}
+        <h2 class="h_title">ユーザー管理</h2>
+        <div id="infomation">
+        <ul>
+        <li><a href="{$smarty.const.GENGOURL}/system/user/entry/input">ユーザー追加</a></li>
+        </ul>
+        </div>
+<h2 class="h_title">ユーザー一覧</h2>
+
+        <table border="0" cellpadding="0" cellspacing="0" id="qatable_l">
+        <tr>
+        <th width="120" class="p_l10">操作</th>
+        <th width="80">有効/無効</th>
+        <th>ユーザー名</th>
+        <th>スカイプ名</th>
+        </tr>
+{foreach from=$user key="key" item="value" name="user"}
+        <tr>
+        <td width="120" class="title"><a href="{$smarty.const.GENGOURL}/system/user/view/mid/{$value._id}">詳細</a>&nbsp;<a href="{$smarty.const.GENGOURL}/system/user/drop/input/mid/{$value._id}">削除</a></td>
+         <td width="80">
+{if strcasecmp($value.col_validate,$smarty.const.VALIDATE_ALLOW) == 0}
+        有効
+{elseif strcasecmp($value.col_validate,$smarty.const.VALIDATE_DENY) == 0}
+        <b>無効</b>
+{/if}
+        </td>
+        <td>{$value.col_given_name}</td>
+        <td>{$value.col_skype_name}</td>
+        </tr>
+{/foreach}
+        </table>
     </div>
 </div>
 </div>

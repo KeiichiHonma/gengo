@@ -3,25 +3,20 @@ require_once('fw/formManager.php');
 class userForm extends formManager
 {
     function __construct(){
-    }
 
+    }
     private $form = array
     (
-        'ユーザー情報'=>array
+        'ログイン情報'=>array
         (
-            '名前'=>array(            'name'=>'name',      'type'=>'text',  'func'=>null,               'class'=>'form_text_common',   'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'', 'remarks'=>''),
-            'ディレクトリ名'=>array(  'name'=>'directory', 'type'=>'text',  'func'=>null,               'class'=>'form_text_common',   'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'', 'remarks'=>''),
-            'URL'=>array(             'name'=>'url',       'type'=>'text',  'func'=>null,               'class'=>'form_text_large',    'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'', 'remarks'=>''),
-            '深さ'=>array(            'name'=>'depth',      'type'=>'text',  'func'=>null,               'class'=>'form_text_common',   'maxlength'=>null,'must'=>FALSE, 'front'=>'','back'=>'', 'remarks'=>''),
-            '許可ドメイン'=>array(  'name'=>'domain', 'type'=>'textarea',  'func'=>null,               'class'=>'form_textarea_little',   'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'', 'remarks'=>'カンマ区切り'),
-            'ロールオーバー'=>array(  'name'=>'rollover', 'type'=>'textarea',  'func'=>null,               'class'=>'form_textarea_little',   'maxlength'=>null,'must'=>FALSE, 'front'=>'','back'=>'', 'remarks'=>'カンマ,改行区切り'),
-            'ファイル直接指定'=>array(  'name'=>'direct', 'type'=>'textarea',  'func'=>null,               'class'=>'form_textarea_little',   'maxlength'=>null,'must'=>FALSE, 'front'=>'','back'=>'', 'remarks'=>'改行区切り'),
-            '置換文字列指定'=>array(  'name'=>'replace', 'type'=>'textarea',  'func'=>null,               'class'=>'form_textarea_little',   'maxlength'=>null,'must'=>FALSE, 'front'=>'','back'=>'', 'remarks'=>'カンマ,改行区切り'),
-            '有効/無効'=>array(       'name'=>'validate',  'type'=>'radio', 'func'=>'getValidateRadio', 'class'=>'',                   'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','m_text_style'=>null, 'remarks'=>''),
+            'メールアドレス'=>array(  'name'=>'mail',        'type'=>'text',    'func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
+            'パスワード'=>array(      'name'=>'password',    'type'=>'password','func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
+            'パスワードの確認'=>array('name'=>'password_c',  'type'=>'password','func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
+            '表示名'=>array(  'name'=>'given_name',        'type'=>'text',    'func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
+            'スカイプ名'=>array(  'name'=>'skype_name',        'type'=>'text',    'func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>'')
         )
     );
-    
-    
+
     public function getForm(){
         return parent::getForm($this->form,$this);
     }
@@ -29,6 +24,128 @@ class userForm extends formManager
     public function assignForm(){
         parent::assignForm($this->form,$this);
     }
+}
 
+class userMailForm extends formManager
+{
+    function __construct(){
+
+    }
+    private $form = array
+    (
+        'ログイン情報'=>array
+        (
+            'メールアドレス'=>array(  'name'=>'mail',        'type'=>'text',    'func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>'')
+        )
+    );
+
+    public function getForm(){
+        return parent::getForm($this->form,$this);
+    }
+
+    public function assignForm(){
+        parent::assignForm($this->form,$this);
+    }
+}
+
+class userPasswordForm extends formManager
+{
+    function __construct(){
+
+    }
+    private $form = array
+    (
+        'ログイン情報'=>array
+        (
+            'パスワード'=>array(      'name'=>'password',    'type'=>'password','func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
+            'パスワードの確認'=>array('name'=>'password_c',  'type'=>'password','func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>'')
+        )
+    );
+
+    public function getForm(){
+        return parent::getForm($this->form,$this);
+    }
+
+    public function assignForm(){
+        parent::assignForm($this->form,$this);
+    }
+}
+
+class editUserForm extends formManager
+{
+    private $mail_remarks = '';
+
+    private $uid;
+    
+    function __construct($uid){
+        $this->uid = $uid;
+    }
+
+    private $mail_form = array
+    (
+        'メールアドレス'=>array
+        (
+            '現在のメールアドレス'=>array(        'name'=>'given_name',         'type'=>'noedit',    'func'=>'getCurrentMail','class'=>'form_text_common',   'maxlength'=>null,'must'=>FALSE, 'front'=>'','back'=>'','remarks'=>''),
+            '新しいメールアドレス'=>array(        'name'=>'mail',         'type'=>'text','func'=>null,                  'class'=>'form_text_common',   'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
+            '新しいメールアドレスの確認'=>array(  'name'=>'mail_c',       'type'=>'text','func'=>null,                  'class'=>'form_text_common',   'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
+        )
+    );
+
+    private $password_form = array
+    (
+        'パスワード'=>array
+        (
+            '現在のパスワード'=>array(        'name'=>'old_password',     'type'=>'password','func'=>null,                 'class'=>'form_text_common',   'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
+            '新しいパスワード'=>array(        'name'=>'password',         'type'=>'password','func'=>null,                 'class'=>'form_text_common',   'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>'※半角英数4～12文字以内で入力してください。'),
+            '新しいパスワードの確認'=>array(  'name'=>'password_c',       'type'=>'password','func'=>null,                 'class'=>'form_text_common',   'maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>'※半角英数4～12文字以内で入力してください。'),
+        )
+    );
+
+    private $name_form = array
+    (
+        '店舗名'=>array
+        (
+            '店舗名'=>array(        'name'=>'given_name',        'type'=>'text',    'func'=>'getCurrentName',      'class'=>'form_text_common','maxlength'=>'20','must'=>TRUE, 'front'=>'','back'=>'','remarks'=>'')
+        )
+    );
+    //get
+    public function getMailForm(){
+        return parent::getForm($this->mail_form,$this);
+    }
+
+    public function getPasswordForm(){
+        return parent::getForm($this->password_form,$this);
+    }
+
+    public function getNameForm(){
+        return parent::getForm($this->name_form,$this);
+    }
+
+    //assign
+    public function assignMailForm(){
+        parent::assignForm($this->mail_form,$this);
+    }
+    
+    public function assignPasswordForm(){
+        parent::assignForm($this->password_form,$this);
+    }
+
+    public function assignNameForm(){
+        parent::assignForm($this->name_form,$this);
+    }
+
+    public function getCurrentMail(){
+        require_once('user/logic.php');
+        $m_logic = new userLogic();
+        $user_info = $m_logic->getUser($this->uid);
+        return $user_info[0]['col_mail'];
+    }
+
+    public function getCurrentName(){
+        require_once('user/logic.php');
+        $m_logic = new userLogic();
+        $user_info = $m_logic->getUser($this->uid);
+        return $user_info[0]['col_name'];
+    }
 }
 ?>

@@ -2,7 +2,7 @@
 header("Content-type: text/html; charset=utf-8");
 require_once('fw/container.php');
 $con = new container();
-register_shutdown_function('shutdownHandler');
+/*register_shutdown_function('shutdownHandler');
 
 function shutdownHandler(){
     $error = error_get_last();
@@ -12,6 +12,6 @@ function shutdownHandler(){
         $mailManager = new mailManager();
         $mailManager->sendHalt(LOCALE.":ERROR:shutdownHandler\n",$error);
     }
-}
+}*/
 //$con->checkPostCsrf();
 ?>

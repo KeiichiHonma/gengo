@@ -3,7 +3,12 @@
 //manager
 define('T_MANAGER',               'gengo.tab_manager');
 define('A_MANAGER',               'm');
-//user_seo
+
+//user
+define('T_USER',               'gengo.tab_user');
+define('A_USER',               'u');
+
+//user_call
 define('T_CALL',                   'gengo.tab_call');
 define('A_CALL',                   'c');
 

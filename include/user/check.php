@@ -1,38 +1,37 @@
 <?php
 require_once('fw/checkManager.php');
 
-//entry check
 class checkUserEntry extends checkManager
 {
     static private $check_list = array
     (
-        'name'=>array
+        'mail'=>array
         (
-            array('message'=>'！お名前は必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！メールアドレスは必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！メールアドレスが不正です。','func'=>'checkMail','arg'=>null),
+            //debugでは消す。適当に追加するため
+            //array('message'=>'！入力されたメールアドレスは既に使用されています。','func'=>'checkUserDuplication','arg'=>null)
+        ),
+        'password'=>array
+        (
+            array('message'=>'！パスワードは必須です。','func'=>'checkMust','arg'=>null)
+        ),
+        'password_c'=>array
+        (
+            array('message'=>'！パスワードの確認は必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！パスワードとパスワードの確認が一致しません。','func'=>'checkMatch','arg'=>array('key'=>'password'))
+        ),
+        'given_name'=>array
+        (
+            array('message'=>'！表示名は必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！表示名は全角で20字(半角40字)以内で入力してください。','func'=>'checkLength','arg'=>array('start'=>1,'end'=>40)),
             array('message'=>null,'func'=>'replaceInput','arg'=>'name')
         ),
-        'directory'=>array
+        'skype_name'=>array
         (
-            array('message'=>'！ディレクトリは必須です。','func'=>'checkMust','arg'=>null),
-            array('message'=>'！同名のディレクトリが既に存在しています。','func'=>'checkUserDirectoryDuplication','arg'=>null),
-            array('message'=>'！ディレクトリは英語のみ記載できます。','func'=>'checkEigoInt','arg'=>null),
-            array('message'=>null,'func'=>'replaceInput','arg'=>'directory')
-        ),
-        'url'=>array
-        (
-            array('message'=>'！URLは必須です。','func'=>'checkMust','arg'=>null),
-            array('message'=>'！URLが不正です。','func'=>'checkUrl','arg'=>null),
-            array('message'=>null,'func'=>'replaceInput','arg'=>'directory')
-        ),
-        'domain'=>array
-        (
-            array('message'=>'！許可ドメインは必須です。','func'=>'checkMust','arg'=>null),
-            array('message'=>null,'func'=>'replaceInput','arg'=>'directory')
-        ),
-        'depth'=>array
-        (
-            array('message'=>'！深さは数字のみ記載できます。','func'=>'checkInt','arg'=>null),
-            array('message'=>null,'func'=>'replaceInput','arg'=>'directory')
+            array('message'=>'！スカイプ名は必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！スカイプ名は、6文字以上32文字以内の英数字でなければなりません。','func'=>'checkSkypeName','arg'=>null),
+            array('message'=>null,'func'=>'replaceInput','arg'=>'name')
         )
     );
             
@@ -41,43 +40,96 @@ class checkUserEntry extends checkManager
     }
 }
 
-//entry check
 class checkUserEdit extends checkManager
 {
     static private $check_list = array
     (
-        'name'=>array
+        'mail'=>array
         (
-            array('message'=>'！お名前は必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！メールアドレスは必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！メールアドレスが不正です。','func'=>'checkMail','arg'=>null),
+            //debugでは消す。適当に追加するため
+            //array('message'=>'！入力されたメールアドレスは既に使用されています。','func'=>'checkUserDuplication','arg'=>null)
+        ),
+/*        'password'=>array
+        (
+            array('message'=>'！パスワードは必須です。','func'=>'checkMust','arg'=>null)
+        ),
+        'password_c'=>array
+        (
+            array('message'=>'！パスワードの確認は必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！パスワードとパスワードの確認が一致しません。','func'=>'checkMatch','arg'=>array('key'=>'password'))
+        ),*/
+        'given_name'=>array
+        (
+            array('message'=>'！ユーザー名は必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！ユーザー名は全角で20字(半角40字)以内で入力してください。','func'=>'checkLength','arg'=>array('start'=>1,'end'=>40)),
             array('message'=>null,'func'=>'replaceInput','arg'=>'name')
-        ),
-        'directory'=>array
-        (
-            array('message'=>'！ディレクトリは必須です。','func'=>'checkMust','arg'=>null),
-            //array('message'=>'！同名のディレクトリが既に存在しています。','func'=>'checkUserDirectoryDuplication','arg'=>null),
-            array('message'=>'！ディレクトリは英語のみ記載できます。','func'=>'checkEigoInt','arg'=>null),
-            array('message'=>null,'func'=>'replaceInput','arg'=>'directory')
-        ),
-        'url'=>array
-        (
-            array('message'=>'！URLは必須です。','func'=>'checkMust','arg'=>null),
-            array('message'=>'！URLが不正です。','func'=>'checkUrl','arg'=>null),
-            array('message'=>null,'func'=>'replaceInput','arg'=>'directory')
-        ),
-        'domain'=>array
-        (
-            array('message'=>'！許可ドメインは必須です。','func'=>'checkMust','arg'=>null),
-            array('message'=>null,'func'=>'replaceInput','arg'=>'directory')
-        ),
-        'depth'=>array
-        (
-            array('message'=>'！深さは数字のみ記載できます。','func'=>'checkInt','arg'=>null),
-            array('message'=>null,'func'=>'replaceInput','arg'=>'directory')
         )
     );
             
     static public function checkError(){
         parent::checkError(self::$check_list);
     }
+}
+
+class checkUserMailEdit extends checkManager
+{
+    static private $check_list = array
+    (
+        'mail'=>array
+        (
+            array('message'=>'！メールアドレスは必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！メールアドレスが不正です。','func'=>'checkMail','arg'=>null),
+            //debugでは消す。適当に追加するため
+            //array('message'=>'！入力されたメールアドレスは既に使用されています。','func'=>'checkUserDuplication','arg'=>null)
+        )
+    );
+            
+    static public function checkError(){
+        parent::checkError(self::$check_list);
+    }
+}
+
+class checkUserPasswordEdit extends checkManager
+{
+    static private $check_list = array
+    (
+        'password'=>array
+        (
+            array('message'=>'！パスワードは必須です。','func'=>'checkMust','arg'=>null)
+        ),
+        'password_c'=>array
+        (
+            array('message'=>'！パスワードの確認は必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！パスワードとパスワードの確認が一致しません。','func'=>'checkMatch','arg'=>array('key'=>'password'))
+        )
+    );
+            
+    static public function checkError(){
+        parent::checkError(self::$check_list);
+    }
+}
+
+class checkLogin extends checkManager
+{
+    static private $check_list = array
+    (
+        'mail'=>array
+        (
+            array('message'=>'メールアドレスは必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'メールアドレスが不正です。','func'=>'checkMail','arg'=>null)
+        ),
+        'password'=>array
+        (
+            array('message'=>'パスワードは必須です。','func'=>'checkMust','arg'=>null)
+            //array('message'=>'パスワードは半角英数4～12文字以内で入力してください。','func'=>'checkLength','arg'=>array('start'=>4,'end'=>12))
+        )
+    );
+
+    static public function checkError(){
+        parent::checkError(self::$check_list);
+    }
+
 }
 ?>

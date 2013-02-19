@@ -1,9 +1,9 @@
 <?php
-define('COUPON_SESSION_NAME',  'COUPONSESSID');
+define('GENGO_SESSION_NAME',  'GENGOSESSID');
 class sessionManager
 {
     function __construct($cache = FALSE){
-        session_name(COUPON_SESSION_NAME);
+        session_name(GENGO_SESSION_NAME);
         session_cache_expire(0);
         $cache ? session_cache_limiter('private_no_expire') : session_cache_limiter('no_cache');
         session_start();

@@ -20,7 +20,7 @@
         <h2 class="h_title">マネージャー管理</h2>
         <div id="infomation">
         <ul>
-        <li><a href="{$smarty.const.ADVISERURL}/system/manager/entry/input">マネージャー追加</a></li>
+        <li><a href="{$smarty.const.GENGOURL}/system/manager/entry/input">マネージャー追加</a></li>
         </ul>
         </div>
 <h2 class="h_title">マネージャー一覧</h2>
@@ -35,11 +35,11 @@
         </tr>
 {foreach from=$manager key="key" item="value" name="manager"}
         <tr>
-        <td width="120" class="title"><a href="{$smarty.const.ADVISERURL}/system/manager/view/mid/{$value._id}">詳細</a>&nbsp;<a href="{$smarty.const.ADVISERURL}/system/manager/drop/input/mid/{$value._id}">削除</a></td>
+        <td width="120" class="title"><a href="{$smarty.const.GENGOURL}/system/manager/view/mid/{$value._id}">詳細</a>&nbsp;<a href="{$smarty.const.GENGOURL}/system/manager/drop/input/mid/{$value._id}">削除</a></td>
          <td width="80">
-{if strcasecmp($value.col_validate,$smarty.const.STATUS_MANAGER_ON) == 0}
+{if strcasecmp($value.col_validate,$smarty.const.VALIDATE_ALLOW) == 0}
         有効
-{elseif strcasecmp($value.col_validate,$smarty.const.STATUS_MANAGER_OFF) == 0}
+{elseif strcasecmp($value.col_validate,$smarty.const.VALIDATE_DENY) == 0}
         <b>無効</b>
 {/if}
         </td>
@@ -53,7 +53,7 @@
 {/if}
         </td>
         <td width="80">
-        {if strcasecmp($value.col_type,$smarty.const.TYPE_M_MANAGER) == 0}<a href="{$smarty.const.ADVISERURL}/system/manager/change/mid/{$value._id}">ログイン</a>{/if}
+        {if strcasecmp($value.col_type,$smarty.const.TYPE_M_MANAGER) == 0}<a href="{$smarty.const.GENGOURL}/system/manager/change/mid/{$value._id}">ログイン</a>{/if}
         </td>
         <td>{$value.col_given_name}</td>
         </tr>

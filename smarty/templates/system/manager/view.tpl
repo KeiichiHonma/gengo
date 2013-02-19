@@ -20,8 +20,8 @@
         <h2 class="h_title">マネージャー詳細</h2>
         <div id="infomation">
         <ul>
-        <li><a href="{$smarty.const.ADVISERURL}/system/manager/edit/input/mid/{$mid}">変更する</a></li>
-        <li><a href="{$smarty.const.ADVISERURL}/system/manager/edit/password/input/mid/{$mid}">パスワードを変更する</a></li>
+        <li><a href="{$smarty.const.GENGOURL}/system/manager/edit/input/mid/{$mid}">変更する</a></li>
+        <li><a href="{$smarty.const.GENGOURL}/system/manager/edit/password/input/mid/{$mid}">パスワードを変更する</a></li>
         </ul>
         </div>
         {foreach from=$form key="group_name" item="form_data" name="form_data"}

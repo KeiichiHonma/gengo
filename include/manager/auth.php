@@ -35,8 +35,12 @@ class managerAuth extends authManager
             if(checkLogin::safeExit()){
                 //認証成功
                 $this->setLogin($manager);
-
-                $con->safeExitRedirect('/system/',TRUE);
+                if(strcasecmp($manager[0]['col_type'],TYPE_M_ADMIN) == 0){
+                    $con->safeExitRedirect('/system/user/',TRUE);
+                }else{
+                    $con->safeExitRedirect('/system/',TRUE);
+                }
+                
             }
         }
         return FALSE;

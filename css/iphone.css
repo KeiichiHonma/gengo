@@ -1,0 +1,117 @@
+img{
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+.logo{
+    margin-top: 5px;
+}
+
+.box{
+    background-color:rgb(242,247,249);
+    max-width: 100%;
+    height:160px;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    box-shadow:0 0 35px #5c5c5c;
+    -moz-box-shadow:0 0 35px #5c5c5c;
+    -webkit-box-shadow:0 0 35px #5c5c5c;
+}
+
+.login-input {
+    background-color:rgb(242,247,249);
+    border:0;
+    height:46px;
+    width: 260px;
+    max-width: 100%;
+    padding: 0px 10px;
+    margin:0px 0px 0px 10px;
+    color:#333;
+    font-size:1em;
+}
+.login-input-line {
+    border-left:0;
+    border-right:0;
+    border-top:0;
+    border-bottom:1px solid #E4E4E4;
+}
+
+#login_name{color: #999;}
+
+span.dummy_password {
+    position:absolute;
+    color: #999;
+    font-size:1em;
+    margin:15px 0px 0px 10px;
+    padding: 0px 10px;
+    height:46px;
+    width: 260px;
+    max-width: 100%;
+}
+
+#login_button{
+    width: 130px;
+    margin: 20px auto 0px auto;
+}
+
+#container_buttons{
+    width: 280px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.3);
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.09) inset;
+}
+
+#container_buttons p{
+    display:block;
+    padding-bottom:40px;
+}
+
+#container_buttons table{
+    width: 150px;
+    margin: 0 auto;
+}
+
+#container_buttons table td{
+    text-align:center;
+}
+
+.thumbnail .details {
+   text-align: center;
+   background-color: #1fb4dd;
+   background-color: rgba(31, 180, 221, 1.0);
+   color: #fff;
+   opacity: 0;
+   position: absolute;
+   top: 0;
+   left: 0;
+   -webkit-transition: 0.25s ease-in;
+   -moz-transition: 0.25s ease-in;
+   -o-transition: 0.25s ease-in;
+   transition: 0.25s ease-in;
+   min-height: 40%;
+   width: 100%;
+}
+
+.thumbnail .details h3, .h3 { 
+   font-family: atrament-web-1, atrament-web-2, "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight: 300; 
+   color: #fff; 
+   font-size: 28px; 
+   line-height: 30px;
+   letter-spacing: 1px; 
+   margin: 0 auto;
+   text-transform: uppercase; 
+   text-align: center; 
+   padding: 27px 0 5px; 
+   border: none; 
+}
+
+
+.thumbnail .details p { 
+   font-size: 18px; 
+   text-align: center;
+}
