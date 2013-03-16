@@ -1,0 +1,39 @@
+#call .col{
+    width:24%;
+    border-right:1px solid #CCC;
+    border-bottom:1px solid #CCC;
+    float:left;
+}
+#call .col img{
+    padding:0px;
+    margin:0px;
+}
+
+#call .task{
+    width:20%;
+    border-bottom:1px solid #CCC;
+    /*height:70px;*/
+    float:left;
+    font-size:12px;
+}
+
+#call .task_detail{
+    width:80%;
+    border-bottom:1px solid #CCC;
+    /*height:70px;*/
+    float:left;
+    font-size:12px;
+}
+#call .task_detail input{
+    padding:2px;
+}
+
+#call .new{
+    background-color: #ffffaa;
+}
+
+#call .finish{
+    background-color: #ffffff;
+}
+
+#message {width:100%;line-height:20px}

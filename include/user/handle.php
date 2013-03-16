@@ -54,4 +54,33 @@ class userHandle extends handleManager
     }
 
 }
+
+class autoLoginHandle extends handleManager
+{
+    public $parameter;
+    
+    function __construct(){
+        $this->parameter = new autoLoginParameter();
+    }
+    
+    public function addRow($uid){
+        $this->parameter->setAdd($uid);
+        return parent::addRow(T_AUTO,$this->parameter);
+    }
+
+    public function updateRow(){
+        return parent::updateRow(T_AUTO,$this->parameter);
+    }
+
+    public function deleteRow(){
+        return parent::deleteRow(T_AUTO,$this->parameter);
+    }
+
+    public function deletePassport($passport){
+        $this->addCondition('col_passport = \''.$passport.'\'');
+        $query = $this->delete(T_AUTO);
+        $this->execute($query);
+    }
+
+}
 ?>

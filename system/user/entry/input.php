@@ -37,7 +37,7 @@ if ( $con->isPost ){
     if($con->isDebug){
         $_POST['mail'] = 'test1@zeus.corp.813.co.jp';
         $_POST['given_name'] = 'user';
-        $_POST['skype_name'] = 'keiichi_81';
+        $_POST['facetime'] = 'keiichi_81';
     }
 }
 //共通処理////////////////////////

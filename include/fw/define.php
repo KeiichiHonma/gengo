@@ -30,7 +30,7 @@ define('REGIST_WRONG',        9);//不正
 
 //manager type
 define('TYPE_M_MANAGER',      0);
-define('TYPE_M_SUPPORT',      8);//サポート
+define('TYPE_M_READER',       8);//リーダー
 define('TYPE_M_ADMIN',        9);
 
 define('TYPE_LANG_EN',      0);

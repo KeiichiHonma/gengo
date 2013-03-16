@@ -33,14 +33,27 @@
     -moz-box-shadow:0 0 35px #5c5c5c;
     -webkit-box-shadow:0 0 35px #5c5c5c;
 }
+.login-table {
+    margin:0px 10px 0px 10px;
+}
 
+.login-td {
+    background-color:rgb(242,247,249);
+    border:0;
+    /*height:46px;*/
+    padding: 0px 0px 0px 0px;
+    margin:0px 0px 0px 0px;
+    color:#333;
+    font-size:1em;
+}
 .login-input {
     background-color:rgb(242,247,249);
     border:0;
     height:46px;
-    width: 360px;
+    /*width: 360px;*/
+    width: 280px;
     padding: 0px 10px;
-    margin:0px 0px 0px 10px;
+    margin:0px 0px 0px 0px;
     color:#333;
     font-size:1em;
 }

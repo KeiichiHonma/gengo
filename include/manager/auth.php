@@ -60,7 +60,8 @@ class managerAuth extends authManager
         }elseif(parent::isLogin()){
             return $this->readyManager();//manager変数セット
         }
-        return FALSE;
+        $con->safeExitRedirect('/system/login',TRUE);
+        //return FALSE;
     }
 }
 ?>

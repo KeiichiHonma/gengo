@@ -73,8 +73,6 @@ class authManager
     // セッションベースログインチェック
     //------------------------------------------------------
     protected function isLogin() {
-/*var_dump($_SESSION);
-die();*/
         global $con;
         if($con->session->get($this->session_key_login_name) !== FALSE && $con->session->get($this->session_key_login_hash) !== FALSE){
             return strcasecmp($con->session->get($this->session_key_login_hash),self::makeHash($con->session->get($this->session_key_login_name))) == 0 ? TRUE : FALSE;
@@ -107,6 +105,8 @@ die();*/
             $con->session->set($this->session_key_login_hash,self::makeHash($login_object[0]['col_mail']));
         //user
         }else{
+            $con->session->set($this->session_key_login_name,$login_object[0]['col_mail']);
+            $con->session->set($this->session_key_login_hash,self::makeHash($login_object[0]['col_mail']));
         }
         
     }
@@ -128,17 +128,12 @@ die();*/
         $this->uid = $con->session->get(SESSION_U_UID);
         $this->account = $con->session->get(SESSION_U_LOGIN);
         $this->given_name = $con->session->get(SESSION_U_GIVEN_NAME);
-        $this->customer_no = $con->session->get(SESSION_U_CUSTOMER_NO);
-        $this->validate_time = $con->session->get(SESSION_U_VALIDATE_TIME);
-
         $con->t->assign('login_uid',$this->uid);
         $con->t->assign('login_account',$this->account);
         $con->t->assign('login_given_name',$this->given_name);
-        $con->t->assign('login_customer_no',$this->customer_no);
-        $con->t->assign('login_validate_time',$this->validate_time);
         
         //変数を取得できなかったログインを認めない=セッション、クッキー必須
-        return !$this->uid || !$this->account || !$this->given_name || !$this->customer_no || !$this->validate_time ? FALSE : TRUE;
+        return !$this->uid || !$this->account || !$this->given_name ? FALSE : TRUE;
     }
 
     public function readyManager()

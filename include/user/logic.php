@@ -97,4 +97,32 @@ class userLogic extends logicManager
         return parent::getResult(T_USER,A_USER);
     }
 }
+
+class autoLoginLogic extends logicManager
+{
+    function getRow($id,$type = COMMON){
+        $this->addSelectColumn(tmpRegistTable::get($type));
+        $this->validateCondition();
+        return parent::getRow(T_REGIST,$id);
+    }
+    
+    //有効期限内のPASSPORT値が存在するか
+    function getVaridateRow($passport,$expire,$type = COMMON){
+        $this->addSelectColumn(autoLoginTable::get($type));
+        $this->setCond('col_passport',$passport);
+        $validateTime = time() - $expire;
+        $this->setCond('col_ctime',$validateTime,'>=');
+        //return parent::getDebug(T_AUTO);
+        return parent::getResult(T_AUTO);
+    }
+
+    //指定のuidが存在するか
+    function getUser($uid,$type = COMMON){
+        $this->addSelectColumn(autoLoginTable::get($type));
+        $this->setCond('col_uid',$uid);
+        //return parent::getDebug(T_AUTO);
+        return parent::getResult(T_AUTO);
+    }
+
+}
 ?>

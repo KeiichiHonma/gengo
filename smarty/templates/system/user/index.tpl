@@ -43,7 +43,7 @@
 {/if}
         </td>
         <td>{$value.col_given_name}</td>
-        <td>{$value.col_skype_name}</td>
+        <td>{$value.col_facetime}</td>
         </tr>
 {/foreach}
         </table>

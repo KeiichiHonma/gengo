@@ -47,7 +47,9 @@ function isFlashEnabled(){
     return hasFlash;
 }
 
-function stopSounds(){ $('audio').remove(); $('.flashPlayer').remove(); }
+function stopSounds(){
+    $('audio').remove(); $('.flashPlayer').remove();
+}
 
 $(document).ready( function(){
 	

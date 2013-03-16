@@ -26,6 +26,11 @@ class callHandle extends handleManager
         return parent::updateRow(T_CALL,$this->parameter);
     }
 
+    public function updateFinish($cid,$mid){
+        $this->parameter->setFinishUpdate($cid,$mid);
+        return parent::updateRow(T_CALL,$this->parameter);
+    }
+
     public function deleteRow($mid){
         return parent::deleteRow(T_CALL,$this->parameter);
     }

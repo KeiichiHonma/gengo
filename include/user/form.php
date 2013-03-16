@@ -13,7 +13,7 @@ class userForm extends formManager
             'パスワード'=>array(      'name'=>'password',    'type'=>'password','func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
             'パスワードの確認'=>array('name'=>'password_c',  'type'=>'password','func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
             '表示名'=>array(  'name'=>'given_name',        'type'=>'text',    'func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>''),
-            'スカイプ名'=>array(  'name'=>'skype_name',        'type'=>'text',    'func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>'')
+            'facetimeID'=>array(  'name'=>'facetime',        'type'=>'text',    'func'=>null,      'class'=>'form_text_common','maxlength'=>null,'must'=>TRUE, 'front'=>'','back'=>'','remarks'=>'')
         )
     );
 

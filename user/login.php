@@ -1,11 +1,9 @@
 <?php
-//--[ 前処理 ]--------------------------------------------------------------
 require_once('user/prepend.php');
 
 //debug
 if ( $con->isPost ){
     $user_auth->login($_POST['mail'],$_POST['password']);
-    //$user_auth->loginDebug($_POST['mail']);
 }else{
     //debug//
     if($con->isDebug){

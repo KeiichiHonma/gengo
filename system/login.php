@@ -8,7 +8,8 @@ if ( $con->isPost ){
 }else{
     //debug//
     if($con->isDebug){
-        $_POST['mail'] = 'im@813.co.jp';
+        //$_POST['mail'] = 'im@813.co.jp';
+        $_POST['mail'] = 'manager1@813.co.jp';
     }
     
 }

@@ -19,15 +19,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
 
         <!-- Stylesheets -->
+        <link rel="stylesheet" href="/css/common.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="/css/user.css" type="text/css" media="all" />
         <link rel="stylesheet" href="/css/style_ele.css">
         <link rel="stylesheet" href="/css/skeleton_ele.css">
-        <link rel="stylesheet" href="/css/user.css" type="text/css" media="all" />
 
-        <!-- Icons -->
-        <link rel="shortcut icon" href="http://www.eleventhedition.com/images/icons/favicon.ico">
-        <link rel="apple-touch-icon" href="http://www.eleventhedition.com/images/icons/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="http://www.eleventhedition.com/images/icons/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="http://www.eleventhedition.com/images/icons/apple-touch-icon-114x114.png" />
+        <!-- Favicons
+        ================================================== -->
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
@@ -45,12 +47,12 @@
 
                 <div class="sixteen columns logo">
                         <a href="/user/">
-                        <img src="/img/logo_robo_3.png" alt="Eleventh Edition" />
+                        <img src="/img/logo_s.png" alt="Eleventh Edition" />
                         </a>
 
-                        <div class="basecamp">
+{*                        <div class="basecamp">
                         <p>ツタヤ渋谷店様</p>
-                        </div>
+                        </div>*}
                 </div>
                 
 
@@ -68,8 +70,8 @@
                                 <div class="row">
                                   <div class="five columns alpha">
                                     <div>
-                                        <label for="skypeName">Skype</label>
-                                        <input type="text" name="skype" id="skypeName" value="" class="required requiredField" />
+                                        <label for="facetimeID">facetimeID</label>
+                                        <input type="text" name="facetime" id="facetimeID" value="" class="required requiredField" />
                                     </div>
                                   </div>
                                   <div class="five columns alpha">

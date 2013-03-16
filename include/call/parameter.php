@@ -15,7 +15,7 @@ class callParameter extends parameterManager
         $this->parameter['mid'] = $mid;
         $this->parameter['type'] = $type;
         $this->parameter['confirm'] = 0;
-        $this->parameter['finish'] = 0;
+        $this->parameter['finish'] = 1;
     }
 
     //管理者のみ
@@ -26,6 +26,12 @@ class callParameter extends parameterManager
     public function setManagerUpdate($cid,$mid){
         parent::readyUpdateParameter($cid,TRUE,$this->timestamp);
         $this->parameter['mid'] = $mid;
+    }
+
+    public function setFinishUpdate($cid,$mid){
+        parent::readyUpdateParameter($cid,TRUE,$this->timestamp);
+        $this->parameter['mid'] = $mid;
+        $this->parameter['finish'] = 0;
     }
 
     public function setDelete(){

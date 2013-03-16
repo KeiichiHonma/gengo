@@ -27,10 +27,10 @@ class checkUserEntry extends checkManager
             array('message'=>'！表示名は全角で20字(半角40字)以内で入力してください。','func'=>'checkLength','arg'=>array('start'=>1,'end'=>40)),
             array('message'=>null,'func'=>'replaceInput','arg'=>'name')
         ),
-        'skype_name'=>array
+        'facetime'=>array
         (
-            array('message'=>'！スカイプ名は必須です。','func'=>'checkMust','arg'=>null),
-            array('message'=>'！スカイプ名は、6文字以上32文字以内の英数字でなければなりません。','func'=>'checkSkypeName','arg'=>null),
+            array('message'=>'！facetimeIDは必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！facetimeIDは、6文字以上32文字以内の英数字でなければなりません。','func'=>'checkSkypeName','arg'=>null),
             array('message'=>null,'func'=>'replaceInput','arg'=>'name')
         )
     );

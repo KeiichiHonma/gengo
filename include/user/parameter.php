@@ -97,4 +97,38 @@ class userParameter extends parameterManager
         }
     }
 }
+
+class autoLoginParameter extends parameterManager
+{
+    public $passport;
+    
+    public function setAdd($uid){
+        parent::readyAddParameter();
+        $this->setParameter($uid);
+    }
+    
+    public function setUpdate($alid,$uid){
+        parent::readyUpdateParameter($alid);
+        $this->setParameter($uid);
+    }
+    
+    public function setDelete($alid){
+        parent::readyDeleteParameter($alid);
+    }
+    
+    private function getPassport(){
+        return $this->passport;
+    }
+
+    private function setPassport(){
+        $this->passport = md5(uniqid( rand(), true ) );
+    }
+
+    //checkが済んでいる前提なのでNOチェック
+    public function setParameter($uid){
+        $this->setPassport();
+        $this->parameter['uid'] = $uid;
+        $this->parameter['passport'] = $this->getPassport();
+    }
+}
 ?>

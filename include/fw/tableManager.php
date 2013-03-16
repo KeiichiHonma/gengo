@@ -12,6 +12,10 @@ define('A_USER',               'u');
 define('T_CALL',                   'gengo.tab_call');
 define('A_CALL',                   'c');
 
+//autoLogin
+define('T_AUTO',                  'gengo.tab_auto_login');
+define('A_AUTO',                  'au');
+
 define('MINIMUM',        0);//最小カラム
 define('COMMON',         1);//通常含めるカラム
 define('DETAIL',         2);//詳細に含めるカラム

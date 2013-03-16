@@ -19,18 +19,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
 
         <!-- Stylesheets -->
+        <link rel="stylesheet" href="/css/common.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="/css/user.css" type="text/css" media="all" />
         <link rel="stylesheet" href="/css/style_ele.css">
         <link rel="stylesheet" href="/css/skeleton_ele.css">
-        <link rel="stylesheet" href="/css/user.css" type="text/css" media="all" />
+        
 
         <link href="/css/iphone.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 0px) and (max-width: 910px)" />
         <link href="/css/desktop.css" rel="stylesheet" type="text/css" media="only screen and (min-width: 911px)" />
 
-        <!-- Icons -->
-        <link rel="shortcut icon" href="http://www.eleventhedition.com/images/icons/favicon.ico">
-        <link rel="apple-touch-icon" href="http://www.eleventhedition.com/images/icons/apple-touch-icon.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="http://www.eleventhedition.com/images/icons/apple-touch-icon-72x72.png" />
-        <link rel="apple-touch-icon" sizes="114x114" href="http://www.eleventhedition.com/images/icons/apple-touch-icon-114x114.png" />
+        <!-- Favicons
+        ================================================== -->
+        <link rel="shortcut icon" href="/img/favicon.ico">
+        <link rel="apple-touch-icon-precomposed" href="/img/apple-touch-icon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png">
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
@@ -135,12 +138,8 @@
 
                 <div class="sixteen columns logo">
                         <a href="/user/">
-                        <img src="/img/logo_robo_3.png" alt="Eleventh Edition" />
+                        <img src="/img/logo_s.png" alt="Eleventh Edition" />
                         </a>
-
-                        <div class="basecamp">
-                        <p>ツタヤ渋谷店様</p>
-                        </div>
                 </div>
                 
                 <div class="sixteen columns content">
@@ -148,7 +147,7 @@
                             <div class="one-third column thumbnail alpha">
                                 <input type='hidden' id='message_en' name='message_en' value='{$message_en}' />
                                 <a href="#" class="button_en" onclick="return false;">
-                                <img src="/img/english.png" alt="English" />
+                                <img src="/img/english_btn.png" alt="English" />
 
                                 <div class="details">
                                 <h3>英語の通訳者</h3>
@@ -156,13 +155,11 @@
 
                                 </a>
                             </div>
-                            
-                            <a href="#" class="disconnect" onclick="return false;">disconnect</a>
-                            
+
                             <div class="one-third column thumbnail">
                                 <input type='hidden' id='message_cn' name='message_cn' value='{$message_cn}' />
                                 <a href="#" class="button_cn" onclick="return false;">
-                                <img src="/img/china.png" alt="China" />
+                                <img src="/img/china_btn.png" alt="China" />
 
                                 <div class="details">
                                 <h3>中国語の通訳者</h3>
@@ -171,19 +168,19 @@
                                 </a>
                             </div>
 
-                            <div class="one-third column thumbnail omega">
+{*                            <div class="one-third column thumbnail omega">
                                 <input type='hidden' id='message_kr' name='message_kr' value='{$message_kr}' />
                                 <a href="#" class="button_kr" onclick="return false;">
-                                <img src="/img/korea.png" alt="Korea" />
+                                <img src="/img/korea_btn.png" alt="Korea" />
 
                                 <div class="details">
                                 <h3>韓国語の翻訳者</h3>
                                 </div>
 
                                 </a>
-                            </div>
+                            </div>*}
                     </div>
-
+<a href="#" class="disconnect" onclick="return false;">disconnect</a>
                     <div class="section clearfix" id="about">
 
                     <h1>タップすると外国語+日本語が話せるあなた専用の通訳に繋がります。</h1>
@@ -232,8 +229,8 @@
 
         <div class="sixteen columns">
             <div id="social" class="section center">
-            <hr />
             <a href="/user/setting" class="button home"><img src="/img/setting.png" alt="Time" width="22" height="22" />&nbsp;設定する</a>
+            <a href="/user/logout" class="button home"><img src="/img/logout.png" alt="Time" width="22" height="22" />&nbsp;ログアウト</a>
             </div>
         </div>
 

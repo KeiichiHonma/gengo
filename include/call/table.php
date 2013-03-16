@@ -6,11 +6,11 @@ class callTable extends tableManager
     static private $table_info = array
         (
             array('column'=>'_id',      'as'=>'call_id', 'type'=>COMMON, 'input'=>FALSE, 'group'=>null),
-            array('column'=>'ctime',    'as'=>null,         'type'=>ALL,    'input'=>FALSE, 'group'=>null),
-            array('column'=>'mtime',    'as'=>null,         'type'=>ALL,    'input'=>FALSE, 'group'=>null),
+            array('column'=>'ctime',    'as'=>null,         'type'=>COMMON,    'input'=>FALSE, 'group'=>null),
+            array('column'=>'mtime',    'as'=>null,         'type'=>COMMON,    'input'=>FALSE, 'group'=>null),
             array('column'=>'uid',     'as'=>null,         'type'=>COMMON, 'input'=>FALSE,  'group'=>null),
             array('column'=>'mid',     'as'=>null,         'type'=>COMMON, 'input'=>FALSE,  'group'=>null),
-            array('column'=>'type',     'as'=>null,         'type'=>COMMON, 'input'=>FALSE,  'group'=>null),
+            array('column'=>'type',     'as'=>'call_type',         'type'=>COMMON, 'input'=>FALSE,  'group'=>null),
             array('column'=>'confirm',  'as'=>null,         'type'=>COMMON, 'input'=>FALSE, 'group'=>null),
             array('column'=>'finish',  'as'=>null,         'type'=>COMMON, 'input'=>FALSE, 'group'=>null)
         );
