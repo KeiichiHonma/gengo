@@ -73,7 +73,7 @@
         {rdelim}
 
         //if ( document.gengo_login.save_password.checked == true )
-        if ( document.gengo_login.save_password == 0 )
+        if ( document.gengo_login.save_password.value == 0 )
         {ldelim}
             db.transaction(
               function(tx) {ldelim}
@@ -142,22 +142,21 @@
     // ロード時に、データベースからメアドとパスワードを取得、フォームにセットする関数
     window.onload = function() {ldelim}
         //database();
-
-    try {ldelim}
-        if (window.openDatabase) {ldelim}
-            var db = window.openDatabase("mydatabase", "1.0", "My Database", "1048576");
-            if (!db) {ldelim}
-                //alert("データベースストレージが使えません。");
-            {rdelim}else{ldelim}
-                //alert(111);
+        try {ldelim}
+            if (window.openDatabase) {ldelim}
+                var db = window.openDatabase("mydatabase", "1.0", "My Database", "1048576");
+                if (!db) {ldelim}
+                    //alert("データベースストレージが使えません。");
+                {rdelim}else{ldelim}
+                    //alert(111);
+                {rdelim}
+            {rdelim} else {ldelim}
+                //alert("データベースストレージはサポートされていません。");
             {rdelim}
-        {rdelim} else {ldelim}
-            //alert("データベースストレージはサポートされていません。");
+        {rdelim} catch (error) {ldelim}
+            // ...
+            //alert(error);
         {rdelim}
-    {rdelim} catch (error) {ldelim}
-        // ...
-        //alert(error);
-    {rdelim}
 
         db.transaction(
             function(tx)
@@ -170,7 +169,7 @@
                   document.gengo_login.password.value  = rs.rows.item(0).password;
                   //alert(rs.rows.item(0).mail);
                   //document.gengo_login.save_password.checked = true;
-                  document.gengo_login.save_password = 0;
+                  document.gengo_login.save_password.value = 0;
                   
                   {if $is_auto_login_stop != TRUE}
                   document.gengo_login.auto_login.value  = 1;
@@ -181,6 +180,7 @@
             {rdelim}
         );
     {rdelim}
+
     </script>
     <div class="container">
         <div class="one columns">

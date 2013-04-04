@@ -65,13 +65,6 @@ class userAuth extends authManager
         return FALSE;
     }
 
-    public function logout($istRedirect = TRUE){
-        $this->unsetPassport();
-        $this->unsetLogin();
-        global $con;
-        if($istRedirect) $con->safeExitRedirect('/user/login',TRUE);
-    }
-
     private function autoLogin(){
 
         if(!$this->isAutoCookie()){
@@ -82,11 +75,13 @@ class userAuth extends authManager
         $row = $logic->getVaridateRow($_COOKIE[COOKIE_PASSPORT],COOKIE_PASSPORT_EXPIRE);
 
         if($row === FALSE) return FALSE;//有効なパスポートが存在しない
+        
         //auto login 成功とみなしメンバー情報を取得
         $logic = new userLogic();
         $user = $logic->getUser($row[0]['col_uid']);
         if(!$user) return FALSE;
-        $this->resetPassport($row[0]['col_uid']);//リセット
+        
+        //$this->resetPassport($row[0]['col_uid']);//リセット
         parent::setLogin($user);
         //最終ログイン時間更新
         //$this->setLastLogin($user[0]['_id']);
@@ -104,6 +99,19 @@ class userAuth extends authManager
 
     }
 
+    public function logout($istRedirect = TRUE){
+        $this->unsetPassport();
+        $this->unsetLogin();
+        global $con;
+        if($istRedirect){
+            $con->safeExitRedirect('/user/login',TRUE);
+        }else{
+            //ローカルストレージ削除対応のため、js側でリダイレクト。コミットだけ
+            $con->db->commit();
+            //$con->safeExitRedirect('/user/bridge',TRUE);
+        }
+    }
+
     //passportクッキーの削除
     private function unsetPassport(){
         //レコード削除
@@ -112,7 +120,7 @@ class userAuth extends authManager
         if($this->isAutoCookie()){
             $handle->deletePassport($_COOKIE[COOKIE_PASSPORT]);
         }
-        setcookie(COOKIE_PASSPORT,'',time() - 60);
+        setcookie(COOKIE_PASSPORT, '', time() - 1800, '/');
     }
 
     //passportクッキーのリセット

@@ -70,14 +70,9 @@
                                 <div class="row">
                                   <div class="five columns alpha">
                                     <div>
+                                        facetimeID
                                         <label for="facetimeID">facetimeID</label>
-                                        <input type="text" name="facetime" id="facetimeID" value="" class="required requiredField" />
-                                    </div>
-                                  </div>
-                                  <div class="five columns alpha">
-                                    <div>
-                                        <label for="email">Email</label>
-                                        <input type="text" name="email" id="email" value="" class="required requiredField email" />
+                                        <input type="text" name="facetime" id="facetimeID" value="{if $smarty.post.facetime}{$smarty.post.facetime|escape}{/if}" class="required requiredField" />
                                     </div>
                                   </div>
                                 </div>
@@ -93,7 +88,7 @@
                     </div>
                 </div>
 
-                <div class="five columns offset-by-one">
+{*                <div class="five columns offset-by-one">
 
                     <div class="section remove-top">
                         <p><span style="color: #1fb4dd;">Call:</span><br />
@@ -107,7 +102,7 @@
                         G2 6LY</p>
                     </div>
 
-                </div>
+                </div>*}
 
                 <div class="sixteen columns">
 

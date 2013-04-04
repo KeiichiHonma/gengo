@@ -9,7 +9,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>user-index</title>
+        <title>taplingual</title>
         <meta name="description" content="user-index" />
         <meta name="keywords" content="user" />
         <meta name="author" content="81">

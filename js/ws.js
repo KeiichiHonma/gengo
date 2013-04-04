@@ -35,8 +35,11 @@ function log( text ) {
         //html += "<div class='col'><input type='submit' data='{\"type\":\"busy\",\"cid\":\"" + jsonobj.cid + "\",\"mid\":\"" + login_mid + "\",\"assign_mid\":\"" + jsonobj.assign_mid + "\",\"manager\":\"" + manager_given_name + "\"}' id='call" + jsonobj.cid + "' class='button_busy' value='担当する' /></div>";
         html += "<div id='task" + jsonobj.cid + "' class='task new'><img src='/img/" + jsonobj.lang_image + "' style='border: none;' width='70' height='70' alt='' /></div>";
         html += "<div id='task_detail" + jsonobj.cid + "' class='task_detail new'>";
-        html += jsonobj.date + " <input type='submit' data='{\"type\":\"finish\",\"cid\":\"" + jsonobj.cid + "\",\"mid\":\"" + login_mid + "\",\"manager\":\"" + manager_given_name + "\"}' cid='" + jsonobj.cid + "' id='finish" + jsonobj.cid + "' class='button_finish' value='完了する' />";
-        html += "<br /><a href='facetime://" + jsonobj.facetime + "'><img src='/img/call.png' style='border: none;' width='15' height='15' alt='Skype Me?!' />" + jsonobj.user + "さんからcall</a>";
+        
+        html += "<input type='submit' data='{\"type\":\"busy\",\"cid\":\"" + jsonobj.cid + "\",\"mid\":\"" + login_mid + "\",\"assign_mid\":\"" + jsonobj.assign_mid + "\",\"manager\":\"" + manager_given_name + "\"}' id='call" + jsonobj.cid + "' class='button_busy' value='担当' />";
+        
+        html += jsonobj.date + " <input type='submit' data='{\"type\":\"finish\",\"cid\":\"" + jsonobj.cid + "\",\"mid\":\"" + login_mid + "\",\"manager\":\"" + manager_given_name + "\"}' cid='" + jsonobj.cid + "' id='finish" + jsonobj.cid + "' class='button_finish' value='完了' disabled='disabled' />";
+        html += "<br /><a href='facetime://" + jsonobj.facetime + "'>" + jsonobj.user + "さんからcall</a>";
         //html += "<br />" + jsonobj.manager + ":" + jsonobj.assign_mid;
         html += "</div>";
 
@@ -58,7 +61,10 @@ function log( text ) {
     //finish 自分以外への通知です////////////////////////////////////////////////////
     if(jsonobj.finish){
         $("#finish"+jsonobj.cid).attr("disabled", "disabled");
-        $("#finish"+jsonobj.cid).attr("value", jsonobj.manager + "が担当");
+        //$("#finish"+jsonobj.cid).attr("value", jsonobj.manager + "が担当");
+        $("#finish"+jsonobj.cid).attr("value", "終了");
+        $("#task" + jsonobj.cid).css("background-color","#ffffff");
+        $("#task_detail" + jsonobj.cid).css("background-color","#ffffff");
         stopSounds();
     }
 }
@@ -81,6 +87,7 @@ $(".button_busy").live("click", function(){
     if ( $(this).attr('data') ) {
         busy( $(this).attr('data') );
         $(this).attr("disabled", "disabled");
+        $(".button_finish").removeAttr("disabled");
         //sound
         stopSounds();
         return false;
@@ -88,6 +95,7 @@ $(".button_busy").live("click", function(){
 });
 
 $(".button_finish").live("click", function(){
+    console.log($(this).attr('data'));
     var cid = $(this).attr('cid');
     $("#task" + cid).css("background-color","#ffffff");
     $("#task_detail" + cid).css("background-color","#ffffff");
@@ -99,7 +107,7 @@ $(document).ready(function() {
     log('{"log":"Connecting..."}');
 
     Server = new FancyWebSocket('ws://' + ws_domain + ':9300');
-    $('#message').keypress(function(e) {
+    $('#message').keydown(function(e) {
         var mes = this;
         $(document).ready(function(){
             $("#button1").click(function(){

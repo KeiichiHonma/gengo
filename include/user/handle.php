@@ -37,6 +37,12 @@ class userHandle extends handleManager
         return parent::updateRow(T_USER,$this->parameter);
     }
 
+    public function updateFacetimeRow($uid){
+        $this->parameter->setFacetimeUpdate($uid);
+        //$this->setDebug();
+        return parent::updateRow(T_USER,$this->parameter);
+    }
+
     public function updateNameRow(){
         $this->parameter->setNameUpdate();
         //$this->setDebug();

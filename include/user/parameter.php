@@ -37,6 +37,11 @@ class userParameter extends parameterManager
         $this->setPasswordParameter();
     }
 
+    public function setFacetimeUpdate($uid){
+        parent::readyUpdateParameter($uid,TRUE,$this->timestamp);
+        $this->parameter['facetime'] = $_POST['facetime'];
+    }
+
     public function setNameUpdate(){
         parent::readyUpdateParameter($_POST['uid'],TRUE,$this->timestamp);
         $this->setNameParameter();

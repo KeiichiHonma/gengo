@@ -15,7 +15,7 @@ require_once '/usr/local/apache2/htdocs/gengo/include/fw/class.PHPWebSocket.php'
 // when a client sends data to the server
 function wsOnMessage($clientID, $json_message, $messageLength, $binary) {
     $message = get_object_vars(json_decode($json_message));
-    var_dump($message);
+    //var_dump($message);
     
     global $Server,$con;
     $ip = long2ip( $Server->wsClients[$clientID][6] );
@@ -57,8 +57,9 @@ function wsOnMessage($clientID, $json_message, $messageLength, $binary) {
             }else{
                 $uid = 0;
                 $user = FALSE;
-                var_dump('alert');
-                die();
+error_message(date("Y/n/d H:i:s").' - uid not numeric');
+                //var_dump('alert');
+                //die();
             }
 
             //manager assign
@@ -72,7 +73,7 @@ function wsOnMessage($clientID, $json_message, $messageLength, $binary) {
             //テスト停止
             //$manager_handle = new managerHandle();
             //$manager_handle->updateStatusRow($free_manager[0]['_id'],STATUS_BUSY);
-
+error_message(date("Y/n/d H:i:s").' - success');
             $con->safeExit();
             $mes_arr = array('call'=>'call','date'=>date("Y/n/d H:i:s"),'cid'=>$cid,'user' =>$user[0]['col_given_name'],'facetime' =>$user[0]['col_facetime'], 'lang' =>$lang, 'lang_image' =>$lang_image, 'manager' =>$free_manager[0]['col_given_name'], 'assign_mid' =>$free_manager[0]['_id']);
             $mes_text .= json_encode($mes_arr);
@@ -152,10 +153,11 @@ function wsOnOpen($clientID)
 
     //Send a join notice to everyone but the person who joined
     foreach ( $Server->wsClients as $id => $client )
-        if ( $id != $clientID )
+        if ( $id != $clientID ){
             //$Server->wsSend($id, "Visitor $clientID ($ip) has joined the room.<br />");
-            $mes_arr = array('log'=>"Visitor $clientID ($ip) has joined the room.<br />");
-            $Server->wsSend($id, json_encode($mes_arr));
+            //$mes_arr = array('log'=>"Visitor $clientID ($ip) has joined the room.<br />");
+            //$Server->wsSend($id, json_encode($mes_arr));
+        }
 }
 
 // when a client closes or lost connection
@@ -166,10 +168,12 @@ function wsOnClose($clientID, $status) {
     //$Server->log( "$ip ($clientID) has disconnected." );
 
     //Send a user left notice to everyone in the room
-    foreach ( $Server->wsClients as $id => $client )
+    foreach ( $Server->wsClients as $id => $client ){
         //$Server->wsSend($id, "Visitor $clientID ($ip) has left the room.<br />");
-        $mes_arr = array('log'=>"Visitor $clientID ($ip) has left the room.<br />");
-        $Server->wsSend($id, json_encode($mes_arr));
+        //$mes_arr = array('log'=>"Visitor $clientID ($ip) has left the room.<br />");
+        //$Server->wsSend($id, json_encode($mes_arr));
+    }
+
 }
 
 // start the server
@@ -182,16 +186,29 @@ $Server->bind('close', 'wsOnClose');
 //$Server->wsStartServer('127.0.0.1', 9300);
 //$Server->wsStartServer('192.168.0.24', 9300);
 //$Server->wsStartServer('gengo.813.co.jp', 9300);
-if(is_file('/usr/local/apache2/htdocs/gengo/include/setting.ini')){
-    $ini = parse_ini_file('/usr/local/apache2/htdocs/gengo/include/setting.ini', true);
-}else{
-    $ini = FALSE;
-}
-if(strcasecmp($ini['common']['isStage'],1) == 0){
-    $Server->wsStartServer('gengo.813.co.jp', 9300);
-}else{
-    $Server->wsStartServer('gengo.apollon.corp.813.co.jp', 9300);
+startServer($Server);
+
+function startServer($Server){
+    if(is_file('/usr/local/apache2/htdocs/gengo/include/setting.ini')){
+        $ini = parse_ini_file('/usr/local/apache2/htdocs/gengo/include/setting.ini', true);
+    }else{
+        $ini = FALSE;
+    }
+    
+    if(strcasecmp($ini['common']['isStage'],1) == 0){
+        //return 'stage';
+        $Server->wsStartServer('gengo.813.co.jp', 9300);
+    }elseif(strcasecmp($ini['common']['isDebug'],1) == 0){
+        //return 'debug';
+    }else{
+        //return 'real';
+        $Server->wsStartServer('gengo.apollon.corp.813.co.jp', 9300);
+    }
 }
 
+function error_message($message)
+{
+    file_put_contents('php://stderr', $message.PHP_EOL);
+}
 
 ?>

@@ -39,38 +39,33 @@
 
 <body class="body-image home blog"><span id="startSound"></span>
     <div class="container">
-        <div class="sixteen columns logo"><a href="/user/"><img src="/img/logo_s.png" alt="Eleventh Edition" /></a></div>
+        <div class="sixteen columns logo">
+        <a href="/user/"><img src="/img/logo_system.png" alt="" /></a>
+        <p class="logo_text">
+        マネージャ:{$manager_given_name}-{$mid}<br /><a href="/system/logout">logout</a> : <a href="javascript:void(0);" onclick="stopSounds();">stop sounds</a>{*<a class="button" href="#" onclick="stopSounds();">stop all sounds</a>*}
+        
+        </p>
+
+        </div>
 
         <div class="ten columns">
-            マネージャ:{$manager_given_name}-{$mid}:<a href="/system/logout">ログアウト</a>
             <div class="section remove-top remove-bottom">
                 <div class="row">
                     <div id='call' name='call'>
+                        {if $call}
+                            {foreach from=$call key="key" item="value" name="call"}
+                                <div id="task{$value.call_id}" class="task new"><img src="/img/{if strcasecmp($value.call_type,1) == 0}china_task.png{else}english_task.png{/if}" style="border: none;" width="70" height="70" alt="" /></div>
+                                <div id="task_detail{$value.call_id}" class="task_detail new">
 
-{foreach from=$call key="key" item="value" name="call"}
-<div id="task{$value.call_id}" class="task new"><img src="/img/{if strcasecmp($value.call_type,1) == 0}english_task.png{else}china_task.png{/if}" style="border: none;" width="70" height="70" alt="" /></div>
-<div id="task_detail{$value.call_id}" class="task_detail new">
-{$value.col_ctime|make_date:"Y/n/d H:i:s"}<input type="submit" data="{ldelim}\"type\":\"finish\",\"cid\":\"{$value.call_id}\",\"mid\":\"{$value.col_mid}\",\"manager\":\"{$value.manager_given_name}\"{rdelim}" cid="{$value.call_id}" id="finish{$value.call_id}" class="button_finish" value="完了する" />
-<br /><a href="facetime://{$value.col_facetime}"><img src="/img/call.png" style="border: none;" width="15" height="15" alt="" />{$value.user_given_name}さんからcall</a></div>
-{/foreach}
+                                <input type="submit" data='{ldelim}"type":"busy","cid":"{$value.call_id}","mid":"{$mid}","assign_mid":"{$value.col_mid}","manager":"{$value.manager_given_name}"{rdelim}' cid="{$value.call_id}" id="call{$value.call_id}" class="button_busy" {if strcasecmp($value.col_assign,0) == 0}disabled="disabled" value="担当:{$value.manager_given_name}"{else} value="担当"{/if} />
+                                {$value.col_ctime|make_date:"Y/n/d H:i:s"}
 
-        
+                                <input type="submit" {if strcasecmp($value.col_assign,1) == 0 || ( strcasecmp($value.col_assign,0) == 0 && strcasecmp($value.col_finish,1) == 0 && $value.col_mid != $mid ) }disabled="disabled"{/if} data='{ldelim}"type":"finish","cid":"{$value.call_id}","mid":"{$value.col_mid}","manager":"{$value.manager_given_name}"{rdelim}' cid="{$value.call_id}" id="finish{$value.call_id}" class="button_finish" value="完了" /><br />
 
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                <span style="font-size:15px;"><a href="facetime://{$value.col_facetime}">{$value.user_given_name}さんからcall</a></span>
+                                </div>
+                            {/foreach}
+                        {/if}
                     </div>
                     
                     <div>
@@ -86,7 +81,6 @@
         </div>
 
         <div class="five columns offset-by-one">
-            <a class="button" href="#" onclick="stopSounds();">stop all sounds</a>
             <div class="section remove-top">
                 
                 <div id='log' name='log'></div>

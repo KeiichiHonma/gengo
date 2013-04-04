@@ -11,7 +11,7 @@ class callTable extends tableManager
             array('column'=>'uid',     'as'=>null,         'type'=>COMMON, 'input'=>FALSE,  'group'=>null),
             array('column'=>'mid',     'as'=>null,         'type'=>COMMON, 'input'=>FALSE,  'group'=>null),
             array('column'=>'type',     'as'=>'call_type',         'type'=>COMMON, 'input'=>FALSE,  'group'=>null),
-            array('column'=>'confirm',  'as'=>null,         'type'=>COMMON, 'input'=>FALSE, 'group'=>null),
+            array('column'=>'assign',  'as'=>null,         'type'=>COMMON, 'input'=>FALSE, 'group'=>null),
             array('column'=>'finish',  'as'=>null,         'type'=>COMMON, 'input'=>FALSE, 'group'=>null)
         );
     

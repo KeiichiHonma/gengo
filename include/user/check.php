@@ -111,6 +111,23 @@ class checkUserPasswordEdit extends checkManager
     }
 }
 
+class checkUserFacetimeEdit extends checkManager
+{
+    static private $check_list = array
+    (
+        'facetime'=>array
+        (
+            array('message'=>'！facetimeIDは必須です。','func'=>'checkMust','arg'=>null),
+            array('message'=>'！facetimeIDは、6文字以上32文字以内の英数字でなければなりません。','func'=>'checkSkypeName','arg'=>null),
+            array('message'=>null,'func'=>'replaceInput','arg'=>'name')
+        )
+    );
+            
+    static public function checkError(){
+        parent::checkError(self::$check_list);
+    }
+}
+
 class checkLogin extends checkManager
 {
     static private $check_list = array
